@@ -3,11 +3,11 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Direccion(models.Model):
-    TYPES_CHOICES = (
-        ('CASA', u'Casa'),
-    )
+#    TYPES_CHOICES = (
+#        ('CASA', u'Casa'),
+#    )
 
-    type = models.CharField(_('Type'), max_length=20, choices = TYPES_CHOICES)
+#    type = models.CharField(_('Type'), max_length=20, choices = TYPES_CHOICES)
 
     departamento = models.CharField(_('Departement'), max_length = 50, blank = True)
     edificio     = models.CharField(_('Building'), max_length = 20, blank = True)
@@ -40,6 +40,7 @@ class Menu(models.Model):
 
 
 class Centro(models.Model):
+
     nombre              = models.CharField(max_length=255)
     direccion           = models.ForeignKey(Direccion)
     codigo              = models.CharField(max_length = 255)
@@ -59,6 +60,9 @@ class Centro(models.Model):
     responsable         = models.CharField(max_length = 255)
     encargado           = models.CharField(max_length = 255)
     fax                 = models.CharField(max_length = 255)
+    precioComida        = models.DecimalField(max_digits=12, decimal_places=2)
+    precioDesayuno      = models.DecimalField(max_digits=12, decimal_places=2)
+
     def __str__(self):
         return self.nombre
 
