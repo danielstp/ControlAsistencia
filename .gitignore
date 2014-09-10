@@ -58,3 +58,5 @@ target/
 
 #intial DB
 db.sqlite3
+
+*~
