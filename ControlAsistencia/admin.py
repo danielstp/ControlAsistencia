@@ -29,5 +29,6 @@ admin.site.register(Direccion)
 
 
 """
+ adicion tabla intermedia becario
  
 """
