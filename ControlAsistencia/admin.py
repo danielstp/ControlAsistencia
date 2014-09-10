@@ -26,3 +26,8 @@ admin.site.register(Asistio)
 admin.site.register(Menu)
 admin.site.register(Centro)
 admin.site.register(Direccion)
+
+
+"""
+ 
+"""
