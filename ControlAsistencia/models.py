@@ -59,8 +59,8 @@ class Estudiante (models.Model):
     direccion = models.ForeignKey(Direccion)
     tutor     = models.ForeignKey(Tutor)
     centro    = models.ForeignKey(Centro)
-    desayuno  = models.BooleanField(Initial = True)
-    comida    = models.BooleanField(Initial = True)
+    desayuno  = models.BooleanField(initial = True)
+    comida    = models.BooleanField(initial = True)
     descuento = models.DecimalField(max_digits=12, decimal_places=2)
 
     def __str__(self):
