@@ -1,0 +1,17 @@
+[
+    {"model": "Control.menu", "pk": 1, "fields": 
+        {"nombre": "Desayuno", "costo":10}
+    },
+    {"model": "Control.centro", "pk": 1, "fields": 
+        {"nombre": "Simon Rodriguez"}
+    }, 
+    {"model": "Control.tutor", "pk": 1, "fields": 
+        {"nombre": "Naira"}
+    }, 
+    {"model": "Control.estudiante", "pk": 1, "fields": 
+        {"tutor": 1, "nombre": "Jorge", "centro": 1}
+    }, 
+    {"model": "Control.estudiante", "pk": 2, "fields": 
+        {"tutor": 1, "nombre": "Luis"}
+    }
+]
