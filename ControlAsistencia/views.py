@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from ControlAsistencia import models
+import ControlAsistencia
 
 
 def index(request):
-    estudiantes = models.Estudiante.objects.all()
+    estudiantes = ControlAsistencia.models.Estudiante.objects.all()
     return render(request, 'ControlAsistencia/Estudiante.html', {'estudiantes': estudiantes})

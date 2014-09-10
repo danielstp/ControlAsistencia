@@ -5,7 +5,6 @@ from django.utils.translation import ugettext_lazy as _
 class Direccion(models.Model):
     TYPES_CHOICES = (
         ('CASA', u'Casa'),
-
     )
 
     type = models.CharField(_('Type'), max_length=20, choices = TYPES_CHOICES)
