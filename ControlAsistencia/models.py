@@ -46,9 +46,21 @@ class Tutor(models.Model):
 class Estudiante(models.Model):
     nombre = models.CharField(max_length=255)
     apellido = models.CharField(max_length=255)
+    dni = models.CharField(max_length=255)
+    curso = models.CharField(max_length=255)
+    dieta = models.CharField(max_length=255)
+    nutricion = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    etapa = models.CharField(max_length=255)
     direccion  = models.ForeignKey(Direccion)
     tutor = models.ForeignKey(Tutor)
     centro = models.ForeignKey(Centro)
+    desayuno = models.BooleanField
+    comida = models.BooleanField
+    descuento = models.IntegerField(32)
+
+
+
 
     def __str__(self):
         return self.nombre
