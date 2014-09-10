@@ -24,6 +24,13 @@ class Direccion(models.Model):
     def __str__(self):
         return self.calle1 +' '+self.calle2+' '+self.provincia
 
+class Nombre(models.Model):
+    nombre       = models.CharField(_('Nombre'), max_length = 50, blank = True)
+    apellido     = models.CharField(_('1er Apellido'), max_length = 20, blank = True)
+    apellido2    = models.CharField(_('2do Apellido '), max_length = 20, blank = True)
+
+    def __str__(self):
+        return self.nombre +' '+self.apellido+' '+self.apellido2
 
 class Menu(models.Model):
     nombre = models.CharField(max_length=255)
@@ -34,34 +41,46 @@ class Menu(models.Model):
 
 
 class Centro(models.Model):
-    nombre = models.CharField(max_length=255)
-    
+    nombre      = models.CharField(max_length=255)
+    direccion   = models.ForeignKey(Direccion)
+    codigo      = models.CharField(max_length = 255)
+    expediente  = models.CharField(max_length = 255)
+    email       = models.CharField(max_length = 255)
+    telefono    = models.CharField(max_length = 255)
+    personal    = models.CharField(max_length = 255)
+    fax         = models.CharField(max_length = 255)
     def __str__(self):
         return self.nombre
 
 
 class Tutor(models.Model):
-    nombre = models.CharField(max_length=255)
+   nombre      = models.ForeignKey(Nombre)
+   direccion   = models.ForeignKey(Direccion)
+   dni         = models.CharField(max_length = 255)
+   email       = models.CharField(max_length = 255)
+   telefono    = models.CharField(max_length = 255)
+   telefonoAlt = models.CharField(max_length = 255)
 
-    def __str__(self):
+   def __str__(self):
         return self.nombre
 
 
 class Estudiante (models.Model):
-    nombre    = models.CharField(max_length = 255)
-    apellido  = models.CharField(max_length = 255)
-    dni       = models.CharField(max_length = 255)
-    curso     = models.CharField(max_length = 255)
-    dieta     = models.CharField(max_length = 255)
-    nutricion = models.CharField(max_length = 255)
-    email     = models.CharField(max_length = 255)
-    etapa     = models.CharField(max_length = 255)
-    direccion = models.ForeignKey(Direccion)
-    tutor     = models.ForeignKey(Tutor)
-    centro    = models.ForeignKey(Centro)
-    desayuno  = models.BooleanField(Initial = True)
-    comida    = models.BooleanField(Initial = True)
-    descuento = models.DecimalField(max_digits=12, decimal_places=2)
+    nombre      = models.ForeignKey(Nombre)
+    dni         = models.CharField(max_length = 255)
+    curso       = models.CharField(max_length = 255)
+    dieta       = models.CharField(max_length = 255)
+    nutricion   = models.CharField(max_length = 255)
+    email       = models.CharField(max_length = 255)
+    telefono    = models.CharField(max_length = 255)
+    telefonoAlt = models.CharField(max_length = 255)
+    etapa       = models.CharField(max_length = 255)
+    direccion   = models.ForeignKey(Direccion)
+    tutor       = models.ForeignKey(Tutor)
+    centro      = models.ForeignKey(Centro)
+    desayuno    = models.BooleanField(default = True)
+    comida      = models.BooleanField(default = True)
+    descuento   = models.DecimalField(max_digits=12, decimal_places=2)
 
     def __str__(self):
         return self.nombre
