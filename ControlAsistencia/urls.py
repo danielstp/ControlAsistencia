@@ -1,8 +1,5 @@
 from django.conf.urls import patterns, url
 
-# from django.contrib import admin
-# admin.autodiscover()
-
 from ControlAsistencia import views
 
 urlpatterns = patterns('',
