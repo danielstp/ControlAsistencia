@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url
 
 # from django.contrib import admin
-#admin.autodiscover()
+# admin.autodiscover()
 
 from ControlAsistencia import views
 

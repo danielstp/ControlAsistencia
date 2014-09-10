@@ -26,7 +26,6 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -36,10 +35,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'filer',
-    'mptt',
-    'easy_thumbnails',
-    'calendarium',
     'ControlAsistencia',
     'south',
 )
@@ -91,9 +86,15 @@ STATIC_URL = '/static/'
 FIXTURE_DIRS = (
     'DatosIniciales/',
 )
+
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.contrib.messages.context_processors.messages',
 )
 
 TEMPLATE_DIRS = (
