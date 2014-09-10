@@ -51,6 +51,7 @@ class Centro(models.Model):
     emailEncargado      = models.EmailField(max_length = 255)
     comunidadAutonoma   = models.CharField(max_length = 255)
     telefono            = models.CharField(max_length = 255)
+    telefono2           = models.CharField(max_length = 255)
     telDirector         = models.CharField(max_length = 255)
     telEncargado        = models.CharField(max_length = 255)
     telResponsable      = models.CharField(max_length = 255)
@@ -61,6 +62,8 @@ class Centro(models.Model):
     fax                 = models.CharField(max_length = 255)
     precioComida        = models.DecimalField(max_digits=12, decimal_places=2)
     precioDesayuno      = models.DecimalField(max_digits=12, decimal_places=2)
+    beca                = models.ForeignKey(Beca)
+    montoBeca           = models.DecimalField(max_digits=12, decimal_places=2)
 
     def __str__(self):
         return self.nombre
