@@ -19,7 +19,7 @@ class DireccionEnLinea(admin.TabularInline):
 class EstudianteAdmin:
     inlines = [DireccionEnLinea]
 
-admin.site.register(Estudiante)
+admin.site.register(Estudiante, EstudianteAdmin)
 admin.site.register(Tutor, TutorAdmin)
 admin.site.register(Pago)
 admin.site.register(Asistio)
