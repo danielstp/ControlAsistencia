@@ -24,9 +24,9 @@ class Direccion(models.Model):
         return self.calle1 +' '+self.calle2+' '+self.provincia
 
 class Nombre(models.Model):
-    nombre       = models.CharField(_('Nombre'), max_length = 50, blank = True)
-    apellido     = models.CharField(_('1er Apellido'), max_length = 20, blank = True)
-    apellido2    = models.CharField(_('2do Apellido '), max_length = 20, blank = True)
+    nombre       = models.CharField(_('Nombre'), max_length = 150, blank = True)
+    apellido     = models.CharField(_('1er Apellido'), max_length = 120, blank = True)
+    apellido2    = models.CharField(_('2do Apellido '), max_length = 120, blank = True)
 
     def __str__(self):
         return self.nombre +' '+self.apellido+' '+self.apellido2
@@ -40,16 +40,15 @@ class Menu(models.Model):
 
 
 class Centro(models.Model):
-
     nombre              = models.CharField(max_length=255)
     direccion           = models.ForeignKey(Direccion)
-    codigo              = models.CharField(max_length = 255)
+    codigo              = models.CharField('Código',max_length = 255)
     lote                = models.CharField(max_length = 255)
     expediente          = models.CharField(max_length = 255)
-    email               = models.CharField(max_length = 255)
-    emailDirector       = models.CharField(max_length = 255)
-    emailResponsable    = models.CharField(max_length = 255)
-    emailEncargado      = models.CharField(max_length = 255)
+    email               = models.EmailField('Correo Electronico',max_length = 255)
+    emailDirector       = models.EmailField(max_length = 255)
+    emailResponsable    = models.EmailField(max_length = 255)
+    emailEncargado      = models.EmailField(max_length = 255)
     comunidadAutonoma   = models.CharField(max_length = 255)
     telefono            = models.CharField(max_length = 255)
     telDirector         = models.CharField(max_length = 255)
@@ -68,7 +67,9 @@ class Centro(models.Model):
 
 
 class Tutor(models.Model):
-   nombre      = models.ForeignKey(Nombre)
+   nombre      = models.CharField(_('Nombre'), max_length = 150, blank = True)
+   apellido    = models.CharField(_('1er Apellido'), max_length = 120, blank = True)
+   apellido2   = models.CharField(_('2do Apellido '), max_length = 120, blank = True)
    direccion   = models.ForeignKey(Direccion)
    dni         = models.CharField(max_length = 255)
    email       = models.CharField(max_length = 255)
@@ -80,28 +81,30 @@ class Tutor(models.Model):
 
 
 class Estudiante (models.Model):
-    nombre       = models.ForeignKey(Nombre)
-    dni          = models.CharField(max_length = 255)
-    sexo         = models.CharField(max_length = 255)
-    nacionalidad = models.CharField(max_length = 255)
-    curso        = models.CharField(max_length = 255)
-    dieta        = models.CharField(max_length = 255)
-    nutricion    = models.CharField(max_length = 255)
-    dieta        = models.CharField(max_length = 255)
-    email        = models.CharField(max_length = 255)
-    telefono     = models.CharField(max_length = 255)
-    telefonoAlt  = models.CharField(max_length = 255)
-    etapa        = models.CharField(max_length = 255)
-    direccion    = models.ForeignKey(Direccion)
-    tutor        = models.ForeignKey(Tutor)
-    centro       = models.ForeignKey(Centro)
-    desayuno     = models.BooleanField(default = True)
-    comida       = models.BooleanField(default = True)
-    descuento    = models.DecimalField(max_digits=12, decimal_places=2)
-    nacimiento   = models.DateField('Fecha de nacimiento')
+   nombre      = models.CharField(_('Nombre'), max_length = 150, blank = True)
+   apellido    = models.CharField(_('1er Apellido'), max_length = 120, blank = True)
+   apellido2   = models.CharField(_('2do Apellido '), max_length = 120, blank = True)
+   dni          = models.CharField(max_length = 255)
+   sexo         = models.CharField(max_length = 255)
+   nacionalidad = models.CharField(max_length = 255)
+   curso        = models.CharField(max_length = 255)
+   dieta        = models.CharField(max_length = 255)
+   nutricion    = models.CharField(max_length = 255)
+   dieta        = models.CharField(max_length = 255)
+   email        = models.CharField(max_length = 255)
+   telefono     = models.CharField(max_length = 255)
+   telefonoAlt  = models.CharField(max_length = 255)
+   etapa        = models.CharField(max_length = 255)
+   direccion    = models.ForeignKey(Direccion)
+   tutor        = models.ForeignKey(Tutor)
+   centro       = models.ForeignKey(Centro)
+   desayuno     = models.BooleanField(default = True)
+   comida       = models.BooleanField(default = True)
+   descuento    = models.DecimalField(max_digits=12, decimal_places=2)
+   nacimiento   = models.DateField('Fecha de nacimiento')
 
-    def __str__(self):
-        return self.dni
+   def __str__(self):
+      return self.dni
 
 
 class Pago(models.Model):
