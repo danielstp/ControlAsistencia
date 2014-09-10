@@ -6,6 +6,8 @@ from ControlAsistencia.models import Asistio
 from ControlAsistencia.models import Menu
 from ControlAsistencia.models import Centro
 from ControlAsistencia.models import Direccion
+from ControlAsistencia.models import Beca
+from ControlAsistencia.models import Nombre
 
 
 class EstudianteEnLinea(admin.TabularInline):
@@ -30,10 +32,8 @@ admin.site.register(Asistio)
 admin.site.register(Menu)
 admin.site.register(Centro)
 admin.site.register(Direccion)
+admin.site.register(Beca)
+admin.site.register(Nombre)
 
 
 
-"""
- adicion tabla intermedia becario
- 
-"""

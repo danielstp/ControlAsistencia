@@ -40,14 +40,25 @@ class Menu(models.Model):
 
 
 class Centro(models.Model):
-    nombre      = models.CharField(max_length=255)
-    direccion   = models.ForeignKey(Direccion)
-    codigo      = models.CharField(max_length = 255)
-    expediente  = models.CharField(max_length = 255)
-    email       = models.CharField(max_length = 255)
-    telefono    = models.CharField(max_length = 255)
-    personal    = models.CharField(max_length = 255)
-    fax         = models.CharField(max_length = 255)
+    nombre              = models.CharField(max_length=255)
+    direccion           = models.ForeignKey(Direccion)
+    codigo              = models.CharField(max_length = 255)
+    lote                = models.CharField(max_length = 255)
+    expediente          = models.CharField(max_length = 255)
+    email               = models.CharField(max_length = 255)
+    emailDirector       = models.CharField(max_length = 255)
+    emailResponsable    = models.CharField(max_length = 255)
+    emailEncargado      = models.CharField(max_length = 255)
+    comunidadAutonoma   = models.CharField(max_length = 255)
+    telefono            = models.CharField(max_length = 255)
+    telDirector         = models.CharField(max_length = 255)
+    telEncargado        = models.CharField(max_length = 255)
+    telResponsable      = models.CharField(max_length = 255)
+    personal            = models.CharField(max_length = 255)
+    director            = models.CharField(max_length = 255)
+    responsable         = models.CharField(max_length = 255)
+    encargado           = models.CharField(max_length = 255)
+    fax                 = models.CharField(max_length = 255)
     def __str__(self):
         return self.nombre
 
@@ -61,28 +72,32 @@ class Tutor(models.Model):
    telefonoAlt = models.CharField(max_length = 255)
 
    def __str__(self):
-        return self.nombre
+        return self.email
 
 
 class Estudiante (models.Model):
-    nombre      = models.ForeignKey(Nombre)
-    dni         = models.CharField(max_length = 255)
-    curso       = models.CharField(max_length = 255)
-    dieta       = models.CharField(max_length = 255)
-    nutricion   = models.CharField(max_length = 255)
-    email       = models.CharField(max_length = 255)
-    telefono    = models.CharField(max_length = 255)
-    telefonoAlt = models.CharField(max_length = 255)
-    etapa       = models.CharField(max_length = 255)
-    direccion   = models.ForeignKey(Direccion)
-    tutor       = models.ForeignKey(Tutor)
-    centro      = models.ForeignKey(Centro)
-    desayuno    = models.BooleanField(default = True)
-    comida      = models.BooleanField(default = True)
-    descuento   = models.DecimalField(max_digits=12, decimal_places=2)
+    nombre       = models.ForeignKey(Nombre)
+    dni          = models.CharField(max_length = 255)
+    sexo         = models.CharField(max_length = 255)
+    nacionalidad = models.CharField(max_length = 255)
+    curso        = models.CharField(max_length = 255)
+    dieta        = models.CharField(max_length = 255)
+    nutricion    = models.CharField(max_length = 255)
+    dieta        = models.CharField(max_length = 255)
+    email        = models.CharField(max_length = 255)
+    telefono     = models.CharField(max_length = 255)
+    telefonoAlt  = models.CharField(max_length = 255)
+    etapa        = models.CharField(max_length = 255)
+    direccion    = models.ForeignKey(Direccion)
+    tutor        = models.ForeignKey(Tutor)
+    centro       = models.ForeignKey(Centro)
+    desayuno     = models.BooleanField(default = True)
+    comida       = models.BooleanField(default = True)
+    descuento    = models.DecimalField(max_digits=12, decimal_places=2)
+    nacimiento   = models.DateField('Fecha de nacimiento')
 
     def __str__(self):
-        return self.nombre
+        return self.dni
 
 
 class Pago(models.Model):
@@ -102,3 +117,10 @@ class Asistio(models.Model):
     
     def __str__(self):
         return self.asistente.nombre + " en Fecha " + self.fechaHora.strftime("%Y-%m-%d %H:%M") + " se sirvio " + self.menu.nombre
+
+class Beca(models.Model):
+    nombre = models.CharField(max_length=255)
+    costo  = models.DecimalField(max_digits=12, decimal_places=2)
+
+    def __str__(self):
+        return self.nombre
