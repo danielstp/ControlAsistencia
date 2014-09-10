@@ -38,7 +38,12 @@ class Menu(models.Model):
     def __str__(self):
         return self.nombre
 
+class Beca(models.Model):
+    nombre = models.CharField(max_length=255)
+    monto  = models.DecimalField(max_digits=12, decimal_places=2)
 
+    def __str__(self):
+        return self.nombre + ' ' + str(self.monto) + '€'
 class Centro(models.Model):
     nombre              = models.CharField(max_length=255)
     direccion           = models.ForeignKey(Direccion)
@@ -95,6 +100,7 @@ class Estudiante (models.Model):
    dni          = models.CharField(max_length = 255)
    sexo         = models.CharField(max_length = 255)
    nacionalidad = models.CharField(max_length = 255)
+   cuenta       = models.CharField(max_length = 255)
    curso        = models.ForeignKey(Curso)
    dieta        = models.CharField(max_length = 255)
    nutricion    = models.CharField(max_length = 255)
@@ -110,6 +116,8 @@ class Estudiante (models.Model):
    comida       = models.BooleanField(default = True)
    descuento    = models.DecimalField(max_digits=12, decimal_places=2)
    nacimiento   = models.DateField('Fecha de nacimiento')
+   beca         = models.ForeignKey(Beca)
+   final        = models.DateField('Fecha de fin de beca')
 
    def __str__(self):
       return self.dni
@@ -133,12 +141,7 @@ class Asistio(models.Model):
     def __str__(self):
         return self.asistente.nombre + " en Fecha " + self.fechaHora.strftime("%Y-%m-%d %H:%M") + " se sirvio " + self.menu.nombre
 
-class Beca(models.Model):
-    nombre = models.CharField(max_length=255)
-    monto  = models.DecimalField(max_digits=12, decimal_places=2)
 
-    def __str__(self):
-        return self.nombre + ' ' + str(self.monto) + '€'
 
 class Becario(models.Model):
     estudiante = models.ForeignKey(Estudiante)
