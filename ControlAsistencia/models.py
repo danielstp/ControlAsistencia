@@ -124,7 +124,22 @@ class Asistio(models.Model):
 
 class Beca(models.Model):
     nombre = models.CharField(max_length=255)
-    costo  = models.DecimalField(max_digits=12, decimal_places=2)
+    monto  = models.DecimalField(max_digits=12, decimal_places=2)
 
+    def __str__(self):
+        return self.nombre
+
+class Becario(models.Model):
+    estudiante = models.ForeignKey(Estudiante)
+    beca = models.ForeignKey(Beca)
+    monto  = models.DecimalField(max_digits=12, decimal_places=2)
+    final   = models.DateField('Fecha de fin de beca')
+    def __str__(self):
+        return self.nombre
+
+class BecaCentro(models.Model):
+    centro = models.ForeignKey(Centro)
+    beca = models.ForeignKey(Beca)
+    monto  = models.DecimalField(max_digits=12, decimal_places=2)
     def __str__(self):
         return self.nombre
