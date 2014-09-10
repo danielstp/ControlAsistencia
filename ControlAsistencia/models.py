@@ -79,6 +79,11 @@ class Tutor(models.Model):
    def __str__(self):
         return self.email
 
+class Curso(models.Model):
+   nombre = models.CharField(max_length = 255)
+   nivel = models.IntegerField()
+   def __str__(self):
+       return self.nombre + ' ' + str(self.nivel)
 
 class Estudiante (models.Model):
    nombre      = models.CharField(_('Nombre'), max_length = 150, blank = True)
@@ -87,7 +92,7 @@ class Estudiante (models.Model):
    dni          = models.CharField(max_length = 255)
    sexo         = models.CharField(max_length = 255)
    nacionalidad = models.CharField(max_length = 255)
-   curso        = models.CharField(max_length = 255)
+   curso        = models.ForeignKey(Curso)
    dieta        = models.CharField(max_length = 255)
    nutricion    = models.CharField(max_length = 255)
    dieta        = models.CharField(max_length = 255)
@@ -130,7 +135,7 @@ class Beca(models.Model):
     monto  = models.DecimalField(max_digits=12, decimal_places=2)
 
     def __str__(self):
-        return self.nombre
+        return self.nombre + ' ' + str(self.monto) + '€'
 
 class Becario(models.Model):
     estudiante = models.ForeignKey(Estudiante)
