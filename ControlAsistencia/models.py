@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django_countries.fields import CountryField
 
 class Provincia(models.Model):
     nombre = models.CharField(_('Provincia'), max_length = 50, blank = True)
@@ -87,6 +88,7 @@ class Tutor(models.Model):
    email       = models.CharField(max_length = 255)
    telefono    = models.CharField(max_length = 255)
    telefonoAlt = models.CharField(max_length = 255)
+   sexo = models.CharField(_('2do Apellido '), max_length = 120, blank = True, choices=['Masculino','Femenino'])
 
    def __str__(self):
         return self.email
@@ -102,13 +104,11 @@ class Estudiante (models.Model):
    apellido    = models.CharField(_('1er Apellido'), max_length = 120, blank = True)
    apellido2   = models.CharField(_('2do Apellido '), max_length = 120, blank = True)
    dni          = models.CharField(max_length = 255)
-   sexo         = models.CharField(max_length = 255)
-   nacionalidad = models.CharField(max_length = 255)
+   nacionalidad = models.CountryFlied()
    cuenta       = models.CharField(max_length = 255)
    curso        = models.ForeignKey(Curso)
    dieta        = models.CharField(max_length = 255)
    nutricion    = models.CharField(max_length = 255)
-   dieta        = models.CharField(max_length = 255)
    email        = models.CharField(max_length = 255)
    telefono     = models.CharField(max_length = 255)
    telefonoAlt  = models.CharField(max_length = 255)
@@ -122,7 +122,8 @@ class Estudiante (models.Model):
    nacimiento   = models.DateField('Fecha de nacimiento')
    beca         = models.ManyToManyField(Beca,blank=True, null=True)
    final        = models.DateField('Fecha de fin de beca')
-
+   sexo = models.CharField(_('Sexo '), max_length = 120, blank = True, choices=['Masculino','Femenino'])
+   formaPago = models.CharField(_('Forma de Pago'), max_length = 120, blank = True, choices=['Efectivo','Banco'])
    def __str__(self):
       return self.dni
 
