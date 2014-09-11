@@ -9,6 +9,7 @@ from django_countries.fields import CountryField
 
 class Provincia(models.Model):
     nombre = models.CharField(_('Provincia'), max_length = 250)
+
     def __str__(self):
         return self.nombre
 
@@ -30,7 +31,9 @@ class Direccion(models.Model):
     localidad    = models.CharField(_('Ciudad'), max_length = 100, blank = True)
     provincia    = models.ForeignKey(Provincia)
     pais         = CountryField('Pais')
-
+    class Meta:
+        verbose_name=_('Direccion')
+        verbose_name_plural=_('Direcciones')
     def __str__(self):
         return self.calle1 +' '+self.calle2+' '+self.provincia.nombre
 
@@ -95,7 +98,9 @@ class Tutor(models.Model):
    telefono    = models.CharField(max_length = 255)
    telefonoAlt = models.CharField(max_length = 255)
    sexo = models.CharField(_('2do Apellido '), max_length = 120, blank = True, choices=[('M','Masculino'),('F','Femenino')])
-
+   class Meta:
+        verbose_name=_('Tutor')
+        verbose_name_plural=_('Tutores')
    def __str__(self):
         return self.email
 
@@ -150,7 +155,9 @@ class Asistio(models.Model):
     asistente = models.ForeignKey(Estudiante)
     fechaHora = models.DateTimeField('Fecha y hora de la asistencia')
     menu      = models.ForeignKey(Menu)
-    
+    class Meta:
+        verbose_name=_('Asistencia')
+        verbose_name_plural=_('Asistencias')
     def __str__(self):
         return self.asistente.nombre + " en Fecha " + self.fechaHora.strftime("%Y-%m-%d %H:%M") + " se sirvio " + self.menu.nombre
 
@@ -161,6 +168,9 @@ class Becario(models.Model):
     beca = models.ForeignKey(Beca)
     monto  = models.DecimalField(max_digits=12, decimal_places=2)
     final   = models.DateField('Fecha de fin de beca')
+    class Meta:
+        verbose_name=_('Becado')
+        verbose_name_plural=_('Becados')
     def __str__(self):
         return self.nombre
 
