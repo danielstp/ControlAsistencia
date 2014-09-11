@@ -5,7 +5,7 @@
  {"model": "ControlAsistencia.beca", "fields": {"nombre":"BECA2 DESAYUNO", "monto":0.80}, "pk": 4},
  {"model": "ControlAsistencia.menu", "fields": {"costo": 20, "nombre": "Almuerzo"}, "pk": 2},
  {"model": "ControlAsistencia.direccion", "fields": {"departamento":"1","edificio":"2","piso":"3","casa":"4","numero":"5","calle1":"6","calle2":"7","codigoPostal":"8","localidad":"9","provincia":"10"},"pk":1},
- {"model": "ControlAsistencia.centro", "fields": {"nombre": "Simon Rodriguez", "direccion": 1,"precioComida":1.1,"precioDesayuno":2.2, "beca":{ 1},"montoBeca":2.2}, "pk": 1},
+ {"pk": 1, "fields": {"nombre": "Simon Rodriguez", "direccion": 1, "montoBeca": "1", "telEncargado": "asdf@asdf.com", "telefono": "asdf@asdf.com", "precioComida": 1, "telefono2": "asdf@asdf.com", "codigo": "asdfasdf", "comunidadAutonoma": "asdf@asdf.com", "encargado": "asdf@asdf.com", "director": "asdf@asdf.com", "expediente": "sadfasdf", "emailEncargado": "asdf@asdf.com", "email": "asdf@asdf.com", "direccion": 1, "personal": "asdf@asdf.com", "lote": "asdfasdf", "emailResponsable": "asdf@asdf.com", "telResponsable": "asdf@asdf.com", "emailDirector": "asdf@asdf.com", "responsable": "asdf@asdf.com", "precioDesayuno": 2, "telDirector": "asdf@asdf.com", "beca":[1,2,3,4], "fax": "asdf@asdf.com"}, "model": "ControlAsistencia.centro"},
  {"model": "ControlAsistencia.tutor", "fields": {"nombre": "Naira", "direccion": 1}, "pk": 1},
  {"model": "ControlAsistencia.curso", "fields": {"nombre": "EDUCACIÓN INFANTIL Primer Ciclo", "nivel": 1}, "pk": 1},
  {"model": "ControlAsistencia.curso", "fields": {"nombre": "EDUCACIÓN INFANTIL Segundo Ciclo", "nivel": 2}, "pk": 2},
@@ -19,6 +19,6 @@
  {"model": "ControlAsistencia.curso", "fields": {"nombre": "EDUCACIÓN SECUNDARIA (E.S.O.) 2º", "nivel": 10}, "pk": 10},
  {"model": "ControlAsistencia.curso", "fields": {"nombre": "EDUCACIÓN SECUNDARIA (E.S.O.) 3º", "nivel": 11}, "pk": 11},
  {"model": "ControlAsistencia.curso", "fields": {"nombre": "EDUCACIÓN SECUNDARIA (E.S.O.) 4º", "nivel": 12}, "pk": 12},
- {"model": "ControlAsistencia.estudiante", "fields": {"centro": 1, "nombre": "Jorge", "tutor": 1, "direccion": 1, "descuento": 1, "curso": 11, "nacimiento":"2014-01-01", "beca": 1}, "pk": 1},
- {"model": "ControlAsistencia.estudiante", "fields": {"centro": 1, "nombre": "Luis", "tutor": 1, "direccion": 1, "descuento": 1, "curso": 12, "nacimiento":"2014-01-01", "beca": 1}, "pk": 2},
+ {"model": "ControlAsistencia.estudiante", "fields": {"centro": 1, "nombre": "Jorge", "tutor": 1, "direccion": 1, "descuento": 1, "curso": 11, "nacimiento":"2014-01-01", "beca": [1],"final":"2014-01-31"}, "pk": 1},
+ {"model": "ControlAsistencia.estudiante", "fields": {"centro": 1, "nombre": "Luis", "tutor": 1, "direccion": 1, "descuento": 1, "curso": 12, "nacimiento":"2014-01-01", "beca": [1],"final":"2014-01-31"}, "pk": 2},
  {"model": "ControlAsistencia.asistio", "fields": {"fechaHora": "2014-09-08T14:57:54Z", "menu": 1, "asistente": 1}, "pk": 1}]
