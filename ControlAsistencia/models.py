@@ -116,7 +116,7 @@ class Estudiante (models.Model):
    comida       = models.BooleanField(default = True)
    descuento    = models.DecimalField(max_digits=12, decimal_places=2)
    nacimiento   = models.DateField('Fecha de nacimiento')
-   beca         = models.ForeignKey(Beca)
+   beca         = models.ManyToManyField(Beca)
    final        = models.DateField('Fecha de fin de beca')
 
    def __str__(self):
