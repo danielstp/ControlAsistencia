@@ -1,6 +1,10 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+class Provincia(models.Model):
+    nombre = models.CharField(_('Provincia'), max_length = 50, blank = True)
+    def __str__(self):
+        return self.nombre
 
 class Direccion(models.Model):
 #    TYPES_CHOICES = (
@@ -67,7 +71,7 @@ class Centro(models.Model):
     fax                 = models.CharField(max_length = 255)
     precioComida        = models.DecimalField(max_digits=12, decimal_places=2)
     precioDesayuno      = models.DecimalField(max_digits=12, decimal_places=2)
-    beca                = models.ForeignKey(Beca)
+    beca                = models.ManyToManyField(Beca)
     montoBeca           = models.DecimalField(max_digits=12, decimal_places=2)
 
     def __str__(self):
