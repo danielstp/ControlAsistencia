@@ -1,8 +1,11 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.core.validators import RegexValidator
+import re
+
 
 class Provincia(models.Model):
-    nombre = models.CharField(_('Provincia'), max_length = 50, blank = True)
+    nombre = models.CharField(_('Provincia'), max_length = 250)
     def __str__(self):
         return self.nombre
 
@@ -11,7 +14,7 @@ class Direccion(models.Model):
 #        ('CASA', u'Casa'),
 #    )
 
-#    type = models.CharField(_('Type'), max_length=20, choices = TYPES_CHOICES)
+#    type = models.CharField(_('Type'), max_length=20, choices = ['M','F'])
 
     departamento = models.CharField(_('Departamento'), max_length = 50, blank = True)
     edificio     = models.CharField(_('Edificio'), max_length = 20, blank = True)
@@ -22,7 +25,7 @@ class Direccion(models.Model):
     calle2       = models.CharField(_('Calle 2'), max_length = 100, blank = True)
     codigoPostal = models.CharField(_('Codigo Postal'), max_length = 5, blank = True)
     localidad    = models.CharField(_('Ciudad'), max_length = 100, blank = True)
-    provincia    = models.ForeignKey(Provincia,'Provincia')
+    provincia    = models.ForeignKey(Provincia, 'Provincia')
 
     def __str__(self):
         return self.calle1 +' '+self.calle2+' '+self.provincia
@@ -104,7 +107,7 @@ class Estudiante (models.Model):
    dni          = models.CharField(max_length = 255)
    sexo         = models.CharField(max_length = 255)
    nacionalidad = models.CharField(max_length = 255)
-   cuenta       = models.CharField(max_length = 255)
+   cuenta       = models.CharField(max_length = 255, validators=[validaCuenta])
    curso        = models.ForeignKey(Curso)
    dieta        = models.CharField(max_length = 255)
    nutricion    = models.CharField(max_length = 255)
