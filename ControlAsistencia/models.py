@@ -71,7 +71,7 @@ class Centro(models.Model):
     fax                 = models.CharField(max_length = 255)
     precioComida        = models.DecimalField(max_digits=12, decimal_places=2)
     precioDesayuno      = models.DecimalField(max_digits=12, decimal_places=2)
-    beca                = models.ManyToManyField(Beca)
+    beca                = models.ManyToManyField(Beca,blank=True, null=True)
     montoBeca           = models.DecimalField(max_digits=12, decimal_places=2)
 
     def __str__(self):
@@ -118,9 +118,9 @@ class Estudiante (models.Model):
    centro       = models.ForeignKey(Centro)
    desayuno     = models.BooleanField(default = True)
    comida       = models.BooleanField(default = True)
-   descuento    = models.DecimalField(max_digits=12, decimal_places=2)
+   descuento    = models.DecimalField(max_digits = 12, decimal_places = 2 )
    nacimiento   = models.DateField('Fecha de nacimiento')
-   beca         = models.ManyToManyField(Beca)
+   beca         = models.ManyToManyField(Beca,blank=True, null=True)
    final        = models.DateField('Fecha de fin de beca')
 
    def __str__(self):
