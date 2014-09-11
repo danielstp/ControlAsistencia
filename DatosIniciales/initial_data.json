@@ -4,7 +4,6 @@
  {"model": "ControlAsistencia.beca", "fields": {"nombre":"BECA1 DESAYUNO", "monto":1.80}, "pk": 3},
  {"model": "ControlAsistencia.beca", "fields": {"nombre":"BECA2 DESAYUNO", "monto":0.80}, "pk": 4},
  {"model": "ControlAsistencia.menu", "fields": {"costo": 20, "nombre": "Almuerzo"}, "pk": 2},
- {"model": "ControlAsistencia.direccion", "fields": {"departamento":"1","edificio":"2","piso":"3","casa":"4","numero":"5","calle1":"6","calle2":"7","codigoPostal":"8","localidad":"9","provincia":"10"},"pk":1},
  {"pk": 1, "fields": {"nombre": "Simon Rodriguez", "direccion": 1, "montoBeca": "1", "telEncargado": "asdf@asdf.com", "telefono": "asdf@asdf.com", "precioComida": 1, "telefono2": "asdf@asdf.com", "codigo": "asdfasdf", "comunidadAutonoma": "asdf@asdf.com", "encargado": "asdf@asdf.com", "director": "asdf@asdf.com", "expediente": "sadfasdf", "emailEncargado": "asdf@asdf.com", "email": "asdf@asdf.com", "direccion": 1, "personal": "asdf@asdf.com", "lote": "asdfasdf", "emailResponsable": "asdf@asdf.com", "telResponsable": "asdf@asdf.com", "emailDirector": "asdf@asdf.com", "responsable": "asdf@asdf.com", "precioDesayuno": 2, "telDirector": "asdf@asdf.com", "beca":[1,2,3,4], "fax": "asdf@asdf.com"}, "model": "ControlAsistencia.centro"},
  {"model": "ControlAsistencia.tutor", "fields": {"nombre": "Naira", "direccion": 1}, "pk": 1},
  {"model": "ControlAsistencia.curso", "fields": {"nombre": "EDUCACIÓN INFANTIL Primer Ciclo", "nivel": 1}, "pk": 1},
@@ -73,5 +72,7 @@
  {"model": "ControlAsistencia.provincia", "fields": {"nombre": "Zaragoza"},"pk":49},
  {"model": "ControlAsistencia.provincia", "fields": {"nombre": "Ceuta"},"pk":50},
  {"model": "ControlAsistencia.provincia", "fields": {"nombre": "Melilla"},"pk":51},
+ {"model": "ControlAsistencia.direccion", "fields": {"departamento":"1","edificio":"2","piso":"3","casa":"4","numero":"5","calle1":"6","calle2":"7","codigoPostal":"8","localidad":"9","provincia":10},"pk":1},
+
  {"model": "ControlAsistencia.asistio", "fields": {"fechaHora": "2014-09-08T14:57:54Z", "menu": 1, "asistente": 1}, "pk": 1}]
 
