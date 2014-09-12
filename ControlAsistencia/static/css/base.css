@@ -1,0 +1,16 @@
+.logo1{
+    float:left;
+
+}
+.logo2{
+    float:right;
+}
+#branding {
+    float: left;
+    width: 100%;
+}
+#site-name{
+    text-align: center;
+    font-size: 30px;
+
+}

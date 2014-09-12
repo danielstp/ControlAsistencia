@@ -138,7 +138,7 @@ class Estudiante (models.Model):
    sexo = models.CharField(_('Sexo '), max_length = 120, blank = True, choices=[('M','Masculino'),('F','Femenino')])
    formaPago = models.CharField(_('Forma de Pago'), max_length = 120, blank = True, choices=[('Efectivo','Efectivo'),('Banco','Banco')])
    def __str__(self):
-      return self.dni
+      return self.apellido
 
 
 class Pago(models.Model):
