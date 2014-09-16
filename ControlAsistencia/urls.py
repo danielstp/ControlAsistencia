@@ -1,5 +1,7 @@
 from django.conf.urls import patterns, url
+
 from ControlAsistencia import views
+
 
 urlpatterns = patterns('',
                        # Examples:

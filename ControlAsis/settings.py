@@ -101,10 +101,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 TEMPLATE_DIRS = (
     'Patrones',
-
 )
 
 STATICFILES_DIR =(
     os.path.join(BASE_DIR, "static"),
-
 )
