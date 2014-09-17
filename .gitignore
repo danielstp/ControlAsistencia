@@ -18,6 +18,12 @@ lib64/
 parts/
 sdist/
 var/
+
+bin/
+include/
+lib/
+local/
+
 *.egg-info/
 .installed.cfg
 *.egg
@@ -58,5 +64,6 @@ target/
 
 #intial DB
 db.sqlite3
+project.db
 
 *~

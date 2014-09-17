@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.core.validators import RegexValidator
@@ -7,7 +8,7 @@ from django_countries.fields import CountryField
 class Provincia(models.Model):
     nombre = models.CharField(_('Provincia'), max_length=250)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre
 
 
@@ -35,7 +36,7 @@ class Direccion(models.Model):
         verbose_name = _('Dirección')
         verbose_name_plural = _('Direcciones')
 
-    def __str__(self):
+    def __unicode__(self):
         return self.calle1 + ' ' + self.calle2 + ' ' + self.provincia.nombre
 
 
@@ -45,7 +46,7 @@ class Telefono(models.Model):
                             choices=[('Movil', _('Movil')), ('Oficina', _('Oficina')), ('Casa', _('Casa')),
                                      ('Fax', _('Fax')), ])
 
-    def __str__(self):
+    def __unicode__(self):
         return self.tipo + ': ' + str(self.numero)
 
 
@@ -61,17 +62,17 @@ class Persona(models.Model):
                             choices=[('Masculino', _('Masculino')), ('Femenino', _('Femenino'))])
     nacionalidad = CountryField()
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre + ' ' + self.apellido + ' ' + self.apellido2
 
 
 class Contacto(Persona):
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre + ' ' + self.apellido + ' ' + self.apellido2
 
 
 class EstudianteBase(Persona):
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre + ' ' + self.apellido + ' ' + self.apellido2
 
 
@@ -82,7 +83,7 @@ class TipoMenu(models.Model):
         verbose_name = _('Tipo de Menu')
         verbose_name_plural = _('Tipos de Menus')
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre
 
 
@@ -91,7 +92,7 @@ class Menu(models.Model):
     costo = models.DecimalField(max_digits=12, decimal_places=2)
     tipo = models.ForeignKey(TipoMenu)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre + ' ' + str(self.costo) + '€'
 
 
@@ -106,7 +107,7 @@ class Banco(models.Model):
     fp = models.CharField(max_length=255)
     telefono = models.ForeignKey(Telefono)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre
 
 
@@ -115,7 +116,7 @@ class CuentaBanco(models.Model):
         RegexValidator(regex=r'^[A-Z0-9]{4}(\ [0-9]{4}){5}$', message='ES00 0000 0000 0000 0000 0000')])
     banco = models.ForeignKey(Banco)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.numero
 
 
@@ -123,7 +124,7 @@ class Pagador(Persona):
     cuenta = models.ForeignKey(CuentaBanco)
     class Meta:
        verbose_name_plural = _('Pagadores')
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre + ' ' + self.apellido + ' ' + self.apellido2
 
 
@@ -131,7 +132,7 @@ class Beca(models.Model):
     nombre = models.CharField(max_length=255)
     monto = models.DecimalField(max_digits=12, decimal_places=2)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre + ' ' + str(self.monto) + '€'
 
 
@@ -155,7 +156,7 @@ class Centro(models.Model):
     montoBeca = models.DecimalField(max_digits=12, decimal_places=2)
     telefono = models.ForeignKey(Telefono)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre
 
 
@@ -166,7 +167,7 @@ class Tutor(models.Model):
         verbose_name = _('Tutor')
         verbose_name_plural = _('Tutores')
 
-    def __str__(self):
+    def __unicode__(self):
         return self.persona.nombre + ' ' + self.persona.apellido
 
 
@@ -174,7 +175,7 @@ class Curso(models.Model):
     nombre = models.CharField(max_length=255)
     nivel = models.IntegerField()
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre + ' ' + str(self.nivel)
 
 
@@ -189,7 +190,7 @@ class Estudiante(models.Model):
     centro = models.ForeignKey(Centro)
     nacimiento = models.DateField('Fecha de nacimiento')
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre.nombre + ' ' + self.nombre.apellido
 
 
@@ -201,7 +202,7 @@ class Pago(models.Model):
     formaPago = models.CharField(_('Forma de Pago'), max_length=120, blank=True,
                                  choices=[('Efectivo', 'Efectivo'), ('Banco', 'Banco')])
 
-    def __str__(self):
+    def __unicode__(self):
         return self.fechaHora
 
 
@@ -214,7 +215,7 @@ class Asistencia(models.Model):
         verbose_name = _('Asistencia')
         verbose_name_plural = _('Asistencias')
 
-    def __str__(self):
+    def __unicode__(self):
         return self.asistente.nombre + " en Fecha " + self.fechaHora.strftime(
             "%Y-%m-%d %H:%M") + " se sirvio " + self.menu.nombre
 
@@ -229,7 +230,7 @@ class Becado(models.Model):
         verbose_name = _('Becado')
         verbose_name_plural = _('Becados')
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre
 
 
@@ -238,5 +239,5 @@ class BecaCentro(models.Model):
     beca = models.ForeignKey(Beca)
     monto = models.DecimalField(max_digits=12, decimal_places=2)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.nombre

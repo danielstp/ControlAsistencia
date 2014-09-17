@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/static/css/base.css"/>
+
+
+
+
+
+
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'Nuestro título' %}{% endblock %}
+
+{% block branding %}
+            <div id="site-name">
+                <img class="logo1" src="/static/img/logo-1.png" alt=""/>
+                    {% trans 'Oficina Virtual' %}
+                <img class="logo2" src="/static/img/logo-3.png" alt=""/>
+            </div>
+
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
