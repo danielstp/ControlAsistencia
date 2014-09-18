@@ -18,13 +18,24 @@ from ControlAsistencia.models import Telefono
 from ControlAsistencia.models import Pagador
 from ControlAsistencia.models import Banco
 from ControlAsistencia.models import CuentaBanco
+from ControlAsistencia.models import Etapa
+from ControlAsistencia.models import ComunidadAutonoma
+from ControlAsistencia.models import PlanAsistencia
+from ControlAsistencia.models import Documento
 
 class EstudianteEnLinea(admin.TabularInline):
     model = Estudiante
 
+class PlanAsistenciaEnLinea(admin.TabularInline):
+    model = PlanAsistencia	
+	
+class DocumentoEnLinea(admin.TabularInline):
+    model = Documento	
+	
 
 class TutorAdmin(admin.ModelAdmin):
     inlines = [EstudianteEnLinea]
+   
 
 
 class DireccionEnLinea(admin.TabularInline):
@@ -32,10 +43,10 @@ class DireccionEnLinea(admin.TabularInline):
 
 
 class EstudianteAdmin(admin.ModelAdmin):
-    inlines = [DireccionEnLinea]
+    inlines = [DocumentoEnLinea,PlanAsistenciaEnLinea]
 
 
-admin.site.register(Estudiante)
+admin.site.register(Estudiante, EstudianteAdmin)
 admin.site.register(Tutor, TutorAdmin)
 admin.site.register(Pago)
 admin.site.register(Asistencia)
@@ -52,3 +63,7 @@ admin.site.register(Telefono)
 admin.site.register(Pagador)
 admin.site.register(Banco)
 admin.site.register(CuentaBanco)
+admin.site.register(Documento)
+admin.site.register(Etapa)
+admin.site.register(ComunidadAutonoma)
+admin.site.register(PlanAsistencia)
