@@ -22,6 +22,7 @@ from ControlAsistencia.models import Etapa
 from ControlAsistencia.models import ComunidadAutonoma
 from ControlAsistencia.models import PlanAsistencia
 from ControlAsistencia.models import Documento
+from ControlAsistencia.models import Curso
 
 class EstudianteEnLinea(admin.TabularInline):
     model = Estudiante
@@ -67,3 +68,4 @@ admin.site.register(Documento)
 admin.site.register(Etapa)
 admin.site.register(ComunidadAutonoma)
 admin.site.register(PlanAsistencia)
+admin.site.register(Curso)
