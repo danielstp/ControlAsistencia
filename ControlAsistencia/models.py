@@ -10,7 +10,11 @@ class Provincia(models.Model):
 
     def __unicode__(self):
         return self.nombre
+class ComunidadAutonoma(models.Model):
+    nombre = models.CharField(_('Comunidad Autonoma'), max_length=250)
 
+    def __unicode__(self):
+        return self.nombre
 
 class Direccion(models.Model):
     # TYPES_CHOICES = (
@@ -48,8 +52,9 @@ class Telefono(models.Model):
 
     def __unicode__(self):
         return self.tipo + ': ' + str(self.numero)
+  
 
-
+  
 class Persona(models.Model):
     nombre = models.CharField(_('nombre'), max_length=250, blank=True)
     apellido = models.CharField(_('1er Apellido'), max_length=250, blank=True)
@@ -61,6 +66,7 @@ class Persona(models.Model):
     sexo = models.CharField(_('Sexo'), max_length=10, blank=True,
                             choices=[('Masculino', _('Masculino')), ('Femenino', _('Femenino'))])
     nacionalidad = CountryField()
+    foto=models.ImageField()
 
     def __unicode__(self):
         return self.nombre + ' ' + self.apellido + ' ' + self.apellido2
@@ -71,6 +77,8 @@ class Contacto(Persona):
         return self.nombre + ' ' + self.apellido + ' ' + self.apellido2
 
 
+ 
+	 
 class EstudianteBase(Persona):
     def __unicode__(self):
         return self.nombre + ' ' + self.apellido + ' ' + self.apellido2
@@ -143,12 +151,11 @@ class Centro(models.Model):
     lote = models.CharField(max_length=255)
     expediente = models.CharField(max_length=255)
     director = models.ForeignKey(Contacto, help_text="director de centro")
-    responsable = models.ForeignKey(Contacto, help_text="director de centro")
+    responsable = models.ForeignKey(Contacto, help_text="responsable de comedor")
     email = models.EmailField(_('Correo Electrónico'), max_length=255)
-    comunidadAutonoma = models.CharField(max_length=255)
+    comunidadAutonoma = models.ForeignKey(ComunidadAutonoma)
     director = models.CharField(max_length=255)
-    responsable = models.CharField(max_length=255)
-    encargado = models.CharField(max_length=255)
+    encargado = models.ForeignKey(Contacto,related_name='Encargado', help_text="encargado del comedor")
     fax = models.CharField(max_length=255)
     precioComida = models.DecimalField(max_digits=12, decimal_places=2)
     precioDesayuno = models.DecimalField(max_digits=12, decimal_places=2)
@@ -170,9 +177,16 @@ class Tutor(models.Model):
     def __unicode__(self):
         return self.persona.nombre + ' ' + self.persona.apellido
 
+class Etapa(models.Model):
+    nombre = models.CharField(max_length=255)
+    
+
+    def __unicode__(self):
+        return self.nombre 
 
 class Curso(models.Model):
     nombre = models.CharField(max_length=255)
+    etapa = models.ForeignKey(Etapa)
     nivel = models.IntegerField()
 
     def __unicode__(self):
@@ -184,7 +198,6 @@ class Estudiante(models.Model):
     curso = models.ForeignKey(Curso)
     dieta = models.CharField(max_length=255)
     nutricion = models.CharField(max_length=255)
-    etapa = models.CharField(max_length=255)
     tutor = models.ForeignKey(Tutor)
     pagador = models.ForeignKey(Pagador, related_name='pagador')
     centro = models.ForeignKey(Centro)
@@ -193,7 +206,16 @@ class Estudiante(models.Model):
     def __unicode__(self):
         return self.nombre.nombre + ' ' + self.nombre.apellido
 
-
+class Documento(models.Model):
+   nombre=models.CharField(_('nombre'), max_length=250)
+   descripcion=models.CharField(_('descripcion'), max_length=250)
+   fecha=models.DateTimeField(auto_now=True, editable=False)
+   archivo=models.FileField(upload_to='documentos')
+   persona=models.ForeignKey(Estudiante)
+   def __unicode__(self):
+     return self.nombre
+		
+		
 class Pago(models.Model):
     fechaHora = models.DateTimeField('Fecha y hora del pago')
     monto = models.DecimalField(max_digits=12, decimal_places=2)
@@ -241,3 +263,16 @@ class BecaCentro(models.Model):
 
     def __unicode__(self):
         return self.nombre
+  
+class PlanAsistencia(models.Model):
+    estudiante = models.ForeignKey(Estudiante)
+    lunes=models.BooleanField(default=False)
+    martes=models.BooleanField(default=False)
+    miercoles=models.BooleanField(default=False)
+    jueves=models.BooleanField(default=False)
+    viernes=models.BooleanField(default=False)
+    sabado=models.BooleanField(default=False)
+    domingo=models.BooleanField(default=False)
+    fechaInicio=models.DateTimeField(auto_now=True,editable=False)
+    def __unicode__(self):
+        return "Lunes"+str(self.lunes)+"Martes"+str(self.martes)+"Miercoles"+str(self.miercoles)+"Jueves"+str(self.jueves)+"Viernes"+str(self.viernes)+"Sabado"+str(self.sabado)+"Domingo"+str(self.domingo)
