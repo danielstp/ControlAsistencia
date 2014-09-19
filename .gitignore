@@ -24,6 +24,7 @@ include/
 lib/
 local/
 
+media/
 *.egg-info/
 .installed.cfg
 *.egg

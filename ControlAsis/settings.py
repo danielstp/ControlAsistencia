@@ -132,7 +132,6 @@ INSTALLED_APPS = (
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
-    'ControlAsis',
     'ControlAsistencia',
     'filer',
     'easy_thumbnails',
@@ -163,8 +162,6 @@ CMS_LANGUAGES = {
             'name': gettext('en'),
             'redirect_on_fallback': True,
         },
-    ],
-    2: [
         {
             'public': True,
             'code': 'es',
@@ -172,8 +169,6 @@ CMS_LANGUAGES = {
             'name': gettext('es'),
             'redirect_on_fallback': True,
         },
-    ],
-    3: [
         {
             'public': True,
             'code': 'es-es',
@@ -181,8 +176,6 @@ CMS_LANGUAGES = {
             'name': gettext('es-es'),
             'redirect_on_fallback': True,
         },
-    ],
-    4: [
         {
             'public': True,
             'code': 'gl-es',
