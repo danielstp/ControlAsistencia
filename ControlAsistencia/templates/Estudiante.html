@@ -1,0 +1,6 @@
+<h1>Registro de asistencia</h1>
+
+{% if error_message %} <p><strong> {{error_message}}</strong></p>{% endif %}
+
+{% load static %} <link rel="stylesheet" href="{% static "calendarium/css/bootstrap.min.css" %}"> <link rel="stylesheet" href="{% static "calendarium/css/calendar.css" %}">
+{% render_upcoming_events %}
