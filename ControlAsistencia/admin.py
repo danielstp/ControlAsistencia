@@ -28,15 +28,14 @@ class EstudianteEnLinea(admin.TabularInline):
     model = Estudiante
 
 class PlanAsistenciaEnLinea(admin.TabularInline):
-    model = PlanAsistencia	
-	
+    model = PlanAsistencia
+
 class DocumentoEnLinea(admin.TabularInline):
-    model = Documento	
-	
+    model = Documento
+
 
 class TutorAdmin(admin.ModelAdmin):
     inlines = [EstudianteEnLinea]
-   
 
 
 class DireccionEnLinea(admin.TabularInline):

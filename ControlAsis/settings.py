@@ -120,6 +120,7 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'event_rsvp',
     'calendarium',
+    'ControlAsistencia',
     'cms',
     'mptt',
     'menus',
@@ -136,7 +137,6 @@ INSTALLED_APPS = (
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
-    'ControlAsistencia',
 )
 
 LANGUAGES = (

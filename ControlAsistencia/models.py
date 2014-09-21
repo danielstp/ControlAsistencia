@@ -24,17 +24,17 @@ class Direccion(models.Model):
     #    type = models.CharField(_(u'Type'), max_length=20, choices = ['M','F'])
 
     departamento = models.CharField(_(u'Departamento'), max_length=50, blank=True)
-    edificio = models.CharField(_(u'Edificio'), max_length=20, blank=True)
-    piso = models.CharField(_(u'Piso'), max_length=20, blank=True)
-    casa = models.CharField(_(u'Casa'), max_length=20, blank=True)
+    edificio     = models.CharField(_(u'Edificio'), max_length=20, blank=True)
+    piso   = models.CharField(_(u'Piso'), max_length=20, blank=True)
+    casa   = models.CharField(_(u'Casa'), max_length=20, blank=True)
     numero = models.CharField(_(u'Numero'), max_length=30, blank=True)
     calle1 = models.CharField(_(u'Calle 1'), max_length=100, blank=True)
     calle2 = models.CharField(_(u'Calle 2'), max_length=100, blank=True)
     codigoPostal = models.CharField(_(u'Codigo Postal'), max_length=5, blank=True)
-    ciudad = models.CharField(_(u'Ciudad'), max_length=100, blank=True)
+    ciudad    = models.CharField(_(u'Ciudad'), max_length=100, blank=True)
     provincia = models.ForeignKey(Provincia)
     comunidad = models.ForeignKey(ComunidadAutonoma,help_text='Comunidad Autonoma')
-    pais = CountryField(u'Pais')
+    pais      = CountryField(u'Pais')
 
     class Meta:
         verbose_name = _(u'Dirección')
@@ -52,9 +52,8 @@ class Telefono(models.Model):
 
     def __unicode__(self):
         return self.tipo + ': ' + str(self.numero)
-  
 
-  
+
 class Persona(models.Model):
     nombre = models.CharField(_(u'nombre'), max_length=250, blank=True)
     apellido = models.CharField(_(u'1er Apellido'), max_length=250, blank=True)
@@ -258,7 +257,7 @@ class BecaCentro(models.Model):
     monto = models.DecimalField(max_digits=12, decimal_places=2)
 
     def __unicode__(self):
-        return self.beca
+        return self.beca.nombre + u' ' + self.centro.nombre
 
 class PlanAsistencia(models.Model):
     estudiante = models.ForeignKey(Estudiante)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
 
-import ControlAsistencia
+import ControlAsistencia.views
 
 
 def index(request):
