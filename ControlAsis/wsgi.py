@@ -8,7 +8,7 @@ https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
 """
 
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "PruebaCMS1.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ControlAsis.settings")
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()

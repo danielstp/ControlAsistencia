@@ -8,12 +8,12 @@ from cms.sitemaps import CMSSitemap
 admin.autodiscover()
 
 urlpatterns = i18n_patterns('',
+    url(r'^calendar/', include('calendarium.urls')),
     url(r'^admin/', include(admin.site.urls)),  # NOQA
+    url(r'^control/', include('ControlAsistencia.urls')),
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^', include('cms.urls')),
-    url(r'^calendar/', include('calendarium.urls')),
-    url(r'^control/', include('ControlAsistencia.urls')),
 )
 
 # This is only needed when using runserver.

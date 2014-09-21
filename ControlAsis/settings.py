@@ -116,6 +116,10 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
+    'filer',
+    'easy_thumbnails',
+    'event_rsvp',
+    'calendarium',
     'cms',
     'mptt',
     'menus',
@@ -133,18 +137,14 @@ INSTALLED_APPS = (
     'djangocms_video',
     'reversion',
     'ControlAsistencia',
-    'filer',
-    'easy_thumbnails',
-    'calendarium',
-    'event_rsvp',
 )
 
 LANGUAGES = (
     ## Customize this
+    ('gl-es', gettext('gl-es')),
     ('en', gettext('en')),
     ('es', gettext('es')),
     ('es-es', gettext('es-es')),
-    ('gl-es', gettext('gl-es')),
 )
 
 CMS_LANGUAGES = {
@@ -155,6 +155,13 @@ CMS_LANGUAGES = {
         'redirect_on_fallback': True,
     },
     1: [
+        {
+            'public': True,
+            'code': 'gl-es',
+            'hide_untranslated': False,
+            'name': gettext('gl-es'),
+            'redirect_on_fallback': True,
+        },
         {
             'public': True,
             'code': 'en',
@@ -174,13 +181,6 @@ CMS_LANGUAGES = {
             'code': 'es-es',
             'hide_untranslated': False,
             'name': gettext('es-es'),
-            'redirect_on_fallback': True,
-        },
-        {
-            'public': True,
-            'code': 'gl-es',
-            'hide_untranslated': False,
-            'name': gettext('gl-es'),
             'redirect_on_fallback': True,
         },
     ],

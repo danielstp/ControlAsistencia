@@ -6,4 +6,4 @@ import ControlAsistencia
 
 def index(request):
     estudiantes = ControlAsistencia.models.Estudiante.objects.all()
-    return render(request, 'ControlAsistencia/Estudiante.html', {'estudiantes': estudiantes})
+    return render(request, 'Estudiante.html', {'estudiantes': estudiantes})
