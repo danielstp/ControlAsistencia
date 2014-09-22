@@ -1,606 +1,560 @@
-[ 
-  { 
-    "fields" : { "nombre" : "Alicante/Alacant" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 1
-  },
-  { 
-    "fields" : { "nombre" : "Almería" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 2
-  },
-  { 
-    "fields" : { "nombre" : "Araba/Álava" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 3
-  },
-  { 
-    "fields" : { "nombre" : "Asturias" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 4
-  },
-  { 
-    "fields" : { "nombre" : "Ávila" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 5
-  },
-  { 
-    "fields" : { "nombre" : "Badajoz" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 6
-  },
-  { 
-    "fields" : { "nombre" : "Balears, Illes" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 7
-  },
-  { 
-    "fields" : { "nombre" : "Barcelona" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 8
-  },
-  { 
-    "fields" : { "nombre" : "Bizkaia" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 9
-  },
-  { 
-    "fields" : { "nombre" : "Burgos" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 10
-  },
-  { 
-    "fields" : { "nombre" : "Cáceres" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 11
-  },
-  { 
-    "fields" : { "nombre" : "Cádiz" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 12
-  },
-  { 
-    "fields" : { "nombre" : "Cantabria" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 13
-  },
-  { 
-    "fields" : { "nombre" : "Castellón/Castelló" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 14
-  },
-  { 
-    "fields" : { "nombre" : "Ciudad Real" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 15
-  },
-  { 
-    "fields" : { "nombre" : "Córdoba" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 16
-  },
-  { 
-    "fields" : { "nombre" : "Coruña, A" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 17
-  },
-  { 
-    "fields" : { "nombre" : "Cuenca" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 18
-  },
-  { 
-    "fields" : { "nombre" : "Gipuzkoa" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 19
-  },
-  { 
-    "fields" : { "nombre" : "Girona" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 20
-  },
-  { 
-    "fields" : { "nombre" : "Granada" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 21
-  },
-  { 
-    "fields" : { "nombre" : "Guadalajara" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 22
-  },
-  { 
-    "fields" : { "nombre" : "Huelva" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 23
-  },
-  { 
-    "fields" : { "nombre" : "Huesca" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 24
-  },
-  { 
-    "fields" : { "nombre" : "Jaén" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 25
-  },
-  { 
-    "fields" : { "nombre" : "León" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 26
-  },
-  { 
-    "fields" : { "nombre" : "Lleida" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 27
-  },
-  { 
-    "fields" : { "nombre" : "Lugo" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 28
-  },
-  { 
-    "fields" : { "nombre" : "Madrid" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 29
-  },
-  { 
-    "fields" : { "nombre" : "Málaga" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 30
-  },
-  { 
-    "fields" : { "nombre" : "Murcia" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 31
-  },
-  { 
-    "fields" : { "nombre" : "Navarra" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 32
-  },
-  { 
-    "fields" : { "nombre" : "Ourense" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 33
-  },
-  { 
-    "fields" : { "nombre" : "Palencia" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 34
-  },
-  { 
-    "fields" : { "nombre" : "Palmas, Las" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 35
-  },
-  { 
-    "fields" : { "nombre" : "Pontevedra" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 36
-  },
-  { 
-    "fields" : { "nombre" : "Rioja, La" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 37
-  },
-  { 
-    "fields" : { "nombre" : "Salamanca" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 38
-  },
-  { 
-    "fields" : { "nombre" : "Santa Cruz de Tenerife" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 39
-  },
-  { 
-    "fields" : { "nombre" : "Segovia" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 40
-  },
-  { 
-    "fields" : { "nombre" : "Sevilla" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 41
-  },
-  { 
-    "fields" : { "nombre" : "Soria" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 42
-  },
-  { 
-    "fields" : { "nombre" : "Tarragona" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 43
-  },
-  { 
-    "fields" : { "nombre" : "Teruel" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 44
-  },
-  { 
-    "fields" : { "nombre" : "Toledo" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 45
-  },
-  { 
-    "fields" : { "nombre" : "Valencia/Valéncia" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 46
-  },
-  { 
-    "fields" : { "nombre" : "Valladolid" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 47
-  },
-  { 
-    "fields" : { "nombre" : "Zamora" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 48
-  },
-  { 
-    "fields" : { "nombre" : "Zaragoza" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 49
-  },
-  { 
-    "fields" : { "nombre" : "Ceuta" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 50
-  },
-  { 
-    "fields" : { "nombre" : "Melilla" },
-    "model" : "ControlAsistencia.provincia",
-    "pk" : 51
-  },
-  { 
-    "fields" : { 
-        "calle1" : "Bolivar",
-        "calle2" : "Esq Lanza",
-        "casa" : "4",
-        "ciudad" : "Santa Cruz",
-        "codigoPostal" : "8",
-        "comunidad" : "Alberta",
-        "departamento" : "1",
-        "edificio" : "",
-        "numero" : "5",
-        "pais" : "ES",
-        "piso" : "3",
-        "provincia" : 10
-      },
-    "model" : "ControlAsistencia.direccion",
-    "pk" : 1
-  },
-  { 
-    "fields" : { 
-        "calle1" : "Juan de la Rosa",
-        "calle2" : "",
-        "casa" : "",
-        "ciudad" : "Algo",
-        "codigoPostal" : "00000",
-        "comunidad" : "asdf",
-        "departamento" : "Quillacollo",
-        "edificio" : "Emperado",
-        "numero" : "123",
-        "pais" : "ES",
-        "piso" : "12",
-        "provincia" : 1
-      },
-    "model" : "ControlAsistencia.direccion",
-    "pk" : 2
-  },
-  { 
-    "fields" : { 
-        "numero" : "123456789012",
-        "tipo" : "Movil"
-      },
-    "model" : "ControlAsistencia.telefono",
-    "pk" : 1
-  },
-  { 
-    "fields" : { 
-        "numero" : "3231423",
-        "tipo" : "Casa"
-      },
-    "model" : "ControlAsistencia.telefono",
-    "pk" : 2
-  },
-  { 
-    "fields" : { 
-        "numero" : "3423423",
-        "tipo" : "Movil"
-      },
-    "model" : "ControlAsistencia.telefono",
-    "pk" : 3
-  },
-  { 
-    "fields" : { 
-        "numero" : "765432123456",
-        "tipo" : "Oficina"
-      },
-    "model" : "ControlAsistencia.telefono",
-    "pk" : 4
-  },
-  { 
-    "fields" : { 
-        "apellido" : "Vargas",
-        "apellido2" : "Miranda",
-        "direccion" : 2,
-        "dni" : "343432",
-        "email" : "asdf@asdf.com",
-        "nacionalidad" : "ES",
-        "nombre" : "Luis",
-        "sexo" : "Masculino",
-        "telefono" : 2
-      },
-    "model" : "ControlAsistencia.persona",
-    "pk" : 1
-  },
-  { 
-    "fields" : { 
-        "apellido" : "Lopez",
-        "apellido2" : "Vargas",
-        "direccion" : 2,
-        "dni" : "234124",
-        "email" : "asdf@asdf.com",
-        "nacionalidad" : "ES",
-        "nombre" : "Esteban",
-        "sexo" : "Masculino",
-        "telefono" : 3
-      },
-    "model" : "ControlAsistencia.persona",
-    "pk" : 2
-  },
-  { 
-    "fields" : { 
-        "apellido" : "Lopez",
-        "apellido2" : "Campos",
-        "direccion" : 2,
-        "dni" : "12341234",
-        "email" : "asdf@asdf.com",
-        "nacionalidad" : "ES",
-        "nombre" : "Weimar",
-        "sexo" : "Masculino",
-        "telefono" : 1
-      },
-    "model" : "ControlAsistencia.persona",
-    "pk" : 3
-  },
-  { 
-    "fields" : { "nombre" : "Desayuno" },
-    "model" : "ControlAsistencia.tipomenu",
-    "pk" : 1
-  },
-  { 
-    "fields" : { "nombre" : "Almuerzo" },
-    "model" : "ControlAsistencia.tipomenu",
-    "pk" : 2
-  },
-  { 
-    "fields" : { 
-        "costo" : "10",
-        "nombre" : "Desayuno",
-        "tipo" : 1
-      },
-    "model" : "ControlAsistencia.menu",
-    "pk" : 1
-  },
-  { 
-    "fields" : { 
-        "costo" : "20",
-        "nombre" : "Almuerzo",
-        "tipo" : 2
-      },
-    "model" : "ControlAsistencia.menu",
-    "pk" : 2
-  },
-  { 
-    "fields" : { 
-        "bic" : "56",
-        "codigo" : "MSC",
-        "codigoOficina" : "001",
-        "dc1" : "12",
-        "dc2" : "34",
-        "fp" : "78",
-        "iban" : "MSC",
-        "nombre" : "Mercantil Santa Cruz",
-        "telefono" : 4
-      },
-    "model" : "ControlAsistencia.banco",
-    "pk" : 1
-  },
-  { 
-    "fields" : { 
-        "banco" : 1,
-        "numero" : "XS21 4323 3456 5334 2345 5456"
-      },
-    "model" : "ControlAsistencia.cuentabanco",
-    "pk" : 1
-  },
-  { 
-    "fields" : { "cuenta" : 1 },
-    "model" : "ControlAsistencia.pagador",
-    "pk" : 3
+[
+  {
+    "fields": {
+      "nombre": "Alicante/Alacant"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 1
   },
   {
-    "fields" : {},
-    "model" : "ControlAsistencia.estudiantebase",
-    "pk" : 1
+    "fields": {
+      "nombre": "Almería"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 2
   },
   {
-    "fields" : { 
-        "monto" : "2",
-        "nombre" : "BECA1 ALMUERZO"
-      },
-    "model" : "ControlAsistencia.beca",
-    "pk" : 1
+    "fields": {
+      "nombre": "Araba/Álava"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 3
   },
-  { 
-    "fields" : { 
-        "monto" : "1.5",
-        "nombre" : "BECA2 ALMUERZO"
-      },
-    "model" : "ControlAsistencia.beca",
-    "pk" : 2
+  {
+    "fields": {
+      "nombre": "Asturias"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 4
   },
-  { 
-    "fields" : { 
-        "monto" : "1.8",
-        "nombre" : "BECA1 DESAYUNO"
-      },
-    "model" : "ControlAsistencia.beca",
-    "pk" : 3
+  {
+    "fields": {
+      "nombre": "Ávila"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 5
   },
-  { 
-    "fields" : { 
-        "monto" : "0.8",
-        "nombre" : "BECA2 DESAYUNO"
-      },
-    "model" : "ControlAsistencia.beca",
-    "pk" : 4
+  {
+    "fields": {
+      "nombre": "Badajoz"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 6
   },
-  { 
-    "fields" : { 
-        "beca" : [ 
-            1,
-            2,
-            3,
-            4
-          ],
-        "codigo" : "asdfasdf",
-        "comunidadAutonoma" : "asdf@asdf.com",
-        "direccion" : 1,
-        "director" : "asdf@asdf.com",
-        "email" : "",
-        "encargado" : "asdf@asdf.com",
-        "expediente" : "sadfasdf",
-        "fax" : "",
-        "lote" : "asdfasdf",
-        "montoBeca" : "1",
-        "nombre" : "Simon Rodriguez",
-        "precioComida" : "1",
-        "precioDesayuno" : "2",
-        "responsable" : "",
-        "telefono" : 1
-      },
-    "model" : "ControlAsistencia.centro",
-    "pk" : 1
+  {
+    "fields": {
+      "nombre": "Balears, Illes"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 7
   },
-  { 
-    "fields" : { "persona" : 2 },
-    "model" : "ControlAsistencia.tutor",
-    "pk" : 1
+  {
+    "fields": {
+      "nombre": "Barcelona"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 8
   },
-  { 
-    "fields" : { 
-        "nivel" : 1,
-        "nombre" : "EDUCACIÓN INFANTIL Primer Ciclo"
-      },
-    "model" : "ControlAsistencia.curso",
-    "pk" : 1
+  {
+    "fields": {
+      "nombre": "Bizkaia"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 9
   },
-  { 
-    "fields" : { 
-        "nivel" : 2,
-        "nombre" : "EDUCACIÓN INFANTIL Segundo Ciclo"
-      },
-    "model" : "ControlAsistencia.curso",
-    "pk" : 2
+  {
+    "fields": {
+      "nombre": "Burgos"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 10
   },
-  { 
-    "fields" : { 
-        "nivel" : 3,
-        "nombre" : "EDUCACIÓN PRIMARIA 1º"
-      },
-    "model" : "ControlAsistencia.curso",
-    "pk" : 3
+  {
+    "fields": {
+      "nombre": "Cáceres"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 11
   },
-  { 
-    "fields" : { 
-        "nivel" : 4,
-        "nombre" : "EDUCACIÓN PRIMARIA 2º"
-      },
-    "model" : "ControlAsistencia.curso",
-    "pk" : 4
+  {
+    "fields": {
+      "nombre": "Cádiz"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 12
   },
-  { 
-    "fields" : { 
-        "nivel" : 5,
-        "nombre" : "EDUCACIÓN PRIMARIA 3º"
-      },
-    "model" : "ControlAsistencia.curso",
-    "pk" : 5
+  {
+    "fields": {
+      "nombre": "Cantabria"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 13
   },
-  { 
-    "fields" : { 
-        "nivel" : 6,
-        "nombre" : "EDUCACIÓN PRIMARIA 4º"
-      },
-    "model" : "ControlAsistencia.curso",
-    "pk" : 6
+  {
+    "fields": {
+      "nombre": "Castellón/Castelló"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 14
   },
-  { 
-    "fields" : { 
-        "nivel" : 7,
-        "nombre" : "EDUCACIÓN PRIMARIA 5º"
-      },
-    "model" : "ControlAsistencia.curso",
-    "pk" : 7
+  {
+    "fields": {
+      "nombre": "Ciudad Real"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 15
   },
-  { 
-    "fields" : { 
-        "nivel" : 8,
-        "nombre" : "EDUCACIÓN PRIMARIA 6º"
-      },
-    "model" : "ControlAsistencia.curso",
-    "pk" : 8
+  {
+    "fields": {
+      "nombre": "Córdoba"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 16
   },
-  { 
-    "fields" : { 
-        "nivel" : 9,
-        "nombre" : "EDUCACIÓN SECUNDARIA (E.S.O.) 1º"
-      },
-    "model" : "ControlAsistencia.curso",
-    "pk" : 9
+  {
+    "fields": {
+      "nombre": "Coruña, A"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 17
   },
-  { 
-    "fields" : { 
-        "nivel" : 10,
-        "nombre" : "EDUCACIÓN SECUNDARIA (E.S.O.) 2º"
-      },
-    "model" : "ControlAsistencia.curso",
-    "pk" : 10
+  {
+    "fields": {
+      "nombre": "Cuenca"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 18
   },
-  { 
-    "fields" : { 
-        "nivel" : 11,
-        "nombre" : "EDUCACIÓN SECUNDARIA (E.S.O.) 3º"
-      },
-    "model" : "ControlAsistencia.curso",
-    "pk" : 11
+  {
+    "fields": {
+      "nombre": "Gipuzkoa"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 19
   },
-  { 
-    "fields" : { 
-        "nivel" : 12,
-        "nombre" : "EDUCACIÓN SECUNDARIA (E.S.O.) 4º"
-      },
-    "model" : "ControlAsistencia.curso",
-    "pk" : 12
+  {
+    "fields": {
+      "nombre": "Girona"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 20
   },
-  { 
-    "fields" : { 
-        "centro" : 1,
-        "curso" : 1,
-        "dieta" : "Basal",
-        "etapa" : "123",
-        "nacimiento" : "2004-09-15",
-        "nombre" : 1,
-        "nutricion" : "Alergia a la Nuez",
-        "pagador" : 3,
-        "tutor" : 1
-      },
-    "model" : "ControlAsistencia.estudiante",
-    "pk" : 1
+  {
+    "fields": {
+      "nombre": "Granada"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 21
+  },
+  {
+    "fields": {
+      "nombre": "Guadalajara"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 22
+  },
+  {
+    "fields": {
+      "nombre": "Huelva"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 23
+  },
+  {
+    "fields": {
+      "nombre": "Huesca"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 24
+  },
+  {
+    "fields": {
+      "nombre": "Jaén"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 25
+  },
+  {
+    "fields": {
+      "nombre": "León"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 26
+  },
+  {
+    "fields": {
+      "nombre": "Lleida"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 27
+  },
+  {
+    "fields": {
+      "nombre": "Lugo"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 28
+  },
+  {
+    "fields": {
+      "nombre": "Madrid"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "nombre": "Málaga"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 30
+  },
+  {
+    "fields": {
+      "nombre": "Murcia"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 31
+  },
+  {
+    "fields": {
+      "nombre": "Navarra"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 32
+  },
+  {
+    "fields": {
+      "nombre": "Ourense"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 33
+  },
+  {
+    "fields": {
+      "nombre": "Palencia"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 34
+  },
+  {
+    "fields": {
+      "nombre": "Palmas, Las"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 35
+  },
+  {
+    "fields": {
+      "nombre": "Pontevedra"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 36
+  },
+  {
+    "fields": {
+      "nombre": "Rioja, La"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 37
+  },
+  {
+    "fields": {
+      "nombre": "Salamanca"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 38
+  },
+  {
+    "fields": {
+      "nombre": "Santa Cruz de Tenerife"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 39
+  },
+  {
+    "fields": {
+      "nombre": "Segovia"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 40
+  },
+  {
+    "fields": {
+      "nombre": "Sevilla"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 41
+  },
+  {
+    "fields": {
+      "nombre": "Soria"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 42
+  },
+  {
+    "fields": {
+      "nombre": "Tarragona"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 43
+  },
+  {
+    "fields": {
+      "nombre": "Teruel"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 44
+  },
+  {
+    "fields": {
+      "nombre": "Toledo"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 45
+  },
+  {
+    "fields": {
+      "nombre": "Valencia/Valéncia"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 46
+  },
+  {
+    "fields": {
+      "nombre": "Valladolid"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 47
+  },
+  {
+    "fields": {
+      "nombre": "Zamora"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 48
+  },
+  {
+    "fields": {
+      "nombre": "Zaragoza"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 49
+  },
+  {
+    "fields": {
+      "nombre": "Ceuta"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 50
+  },
+  {
+    "fields": {
+      "nombre": "Melilla"
+    },
+    "model": "ControlAsistencia.provincia",
+    "pk": 51
+  },
+  {
+    "fields": {
+      "nombre": "Desayuno"
+    },
+    "model": "ControlAsistencia.tipomenu",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "nombre": "Almuerzo"
+    },
+    "model": "ControlAsistencia.tipomenu",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "costo": "10",
+      "nombre": "Desayuno",
+      "tipo": 1
+    },
+    "model": "ControlAsistencia.menu",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "costo": "20",
+      "nombre": "Almuerzo",
+      "tipo": 2
+    },
+    "model": "ControlAsistencia.menu",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "bic": "56",
+      "codigo": "MSC",
+      "codigoOficina": "001",
+      "dc1": "12",
+      "dc2": "34",
+      "fp": "78",
+      "iban": "MSC",
+      "nombre": "Mercantil Santa Cruz",
+      "telefono": 4
+    },
+    "model": "ControlAsistencia.banco",
+    "pk": 1
+  },
+  {
+    "pk": 1,
+    "model": "ControlAsistencia.etapa",
+    "fields": {
+      "nombre": "Nivel Primario"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "ControlAsistencia.etapa",
+    "fields": {
+      "nombre": "Nivel Secundario"
+    }
+  },
+  {
+    "fields": {
+      "monto": "2",
+      "nombre": "BECA1 ALMUERZO"
+    },
+    "model": "ControlAsistencia.beca",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "monto": "1.5",
+      "nombre": "BECA2 ALMUERZO"
+    },
+    "model": "ControlAsistencia.beca",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "monto": "1.8",
+      "nombre": "BECA1 DESAYUNO"
+    },
+    "model": "ControlAsistencia.beca",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "monto": "0.8",
+      "nombre": "BECA2 DESAYUNO"
+    },
+    "model": "ControlAsistencia.beca",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "nivel": 1,
+      "etapa": 1,
+      "nombre": "EDUCACIÓN INFANTIL Primer Ciclo"
+    },
+    "model": "ControlAsistencia.curso",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "nivel": 2,
+      "etapa": 1,
+      "nombre": "EDUCACIÓN INFANTIL Segundo Ciclo"
+    },
+    "model": "ControlAsistencia.curso",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "nivel": 3,
+      "etapa": 1,
+      "nombre": "EDUCACIÓN PRIMARIA 1º"
+    },
+    "model": "ControlAsistencia.curso",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "nivel": 4,
+      "etapa": 1,
+      "nombre": "EDUCACIÓN PRIMARIA 2º"
+    },
+    "model": "ControlAsistencia.curso",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "nivel": 5,
+      "etapa": 1,
+      "nombre": "EDUCACIÓN PRIMARIA 3º"
+    },
+    "model": "ControlAsistencia.curso",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "nivel": 6,
+      "etapa": 1,
+      "nombre": "EDUCACIÓN PRIMARIA 4º"
+    },
+    "model": "ControlAsistencia.curso",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "nivel": 7,
+      "etapa": 1,
+      "nombre": "EDUCACIÓN PRIMARIA 5º"
+    },
+    "model": "ControlAsistencia.curso",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "nivel": 8,
+      "etapa": 1,
+      "nombre": "EDUCACIÓN PRIMARIA 6º"
+    },
+    "model": "ControlAsistencia.curso",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "nivel": 9,
+      "etapa": 2,
+      "nombre": "EDUCACIÓN SECUNDARIA (E.S.O.) 1º"
+    },
+    "model": "ControlAsistencia.curso",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "nivel": 10,
+      "etapa": 2,
+      "nombre": "EDUCACIÓN SECUNDARIA (E.S.O.) 2º"
+    },
+    "model": "ControlAsistencia.curso",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "nivel": 11,
+      "etapa": 2,
+      "nombre": "EDUCACIÓN SECUNDARIA (E.S.O.) 3º"
+    },
+    "model": "ControlAsistencia.curso",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "nivel": 12,
+      "etapa": 2,
+      "nombre": "EDUCACIÓN SECUNDARIA (E.S.O.) 4º"
+    },
+    "model": "ControlAsistencia.curso",
+    "pk": 12
   }
 ]
