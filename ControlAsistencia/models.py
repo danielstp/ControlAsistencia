@@ -10,6 +10,8 @@ class Provincia(models.Model):
 
     def __unicode__(self):
         return self.nombre
+
+
 class ComunidadAutonoma(models.Model):
     nombre = models.CharField(_(u'Comunidad Autonoma'), max_length=250)
 
@@ -98,7 +100,7 @@ class Menu(models.Model):
     tipo = models.ForeignKey(TipoMenu)
 
     def __unicode__(self):
-        return self.nombre + ' ' + str(self.costo) + '€'
+        return self.nombre + ' ' + str(self.costo) + u'€'
 
 
 class Banco(models.Model):
