@@ -69,7 +69,7 @@ SITE_ID = 1
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    'django.template.loaders.eggs.Loader'
+    'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -84,7 +84,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware'
+    'cms.middleware.language.LanguageCookieMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -98,7 +98,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'sekizai.context_processors.sekizai',
     'django.core.context_processors.static',
-    'cms.context_processors.cms_settings'
+    'cms.context_processors.cms_settings',
 )
 
 TEMPLATE_DIRS = (
@@ -137,7 +137,20 @@ INSTALLED_APPS = (
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
+    'djangojs',
+    'django.contrib.staticfiles',
+    'ajax_select',
+    'django_tables2',
 )
+
+# define the lookup channels in use on the site
+AJAX_LOOKUP_CHANNELS = {
+    #  simple: search Person.objects.filter(name__icontains=q)
+    'persona'  : {'model': 'ControlAsistencia.persona', 'search_field': 'nombre'},
+    'direccion'  : {'model': 'ControlAsistencia.direccion', 'search_field': 'calle1'},
+    # define a custom lookup channel
+    'song'   : ('example.lookups', 'SongLookup')
+}
 
 LANGUAGES = (
     ## Customize this

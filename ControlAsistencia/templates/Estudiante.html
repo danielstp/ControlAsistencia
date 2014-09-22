@@ -1,5 +1,9 @@
+{% load render_table from django_tables2 %}
+{% load static %}
+<link rel="stylesheet" href="{% static "django_tables2/themes/paleblue/css/screen.css" %}">
+
 <h1>Registro de asistencia</h1>
 
 {% if error_message %} <p><strong> {{error_message}}</strong></p>{% endif %}
 
-{% url "calendar_current_month" %}
+{% render_table estudiantes %}
