@@ -174,7 +174,7 @@ class Pagador(Persona):
     class Meta:
        verbose_name_plural = _(u'Pagadores')
     def __unicode__(self):
-        return self.persona.nombre + ' ' + self.persona.apellido + ' ' + self.persona.apellido2
+        return self.nombre + ' ' + self.apellido + ' ' + self.apellido2
 
 
 class Etapa(models.Model):
