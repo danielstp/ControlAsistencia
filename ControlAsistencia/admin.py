@@ -1,11 +1,18 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 
+from admin_exporter.actions import export_as_csv_action
+from admin_exporter.actions import export_as_json_action
+from admin_exporter.actions import export_as_xml_action
+from admin_exporter.actions import export_as_yaml_action
+
+
 from ControlAsistencia.models import Estudiante
 from ControlAsistencia.models import Tutor
 from ControlAsistencia.models import Pago
 from ControlAsistencia.models import Asistencia
 from ControlAsistencia.models import Menu
+from ControlAsistencia.models import TipoMenu
 from ControlAsistencia.models import Centro
 from ControlAsistencia.models import Direccion
 from ControlAsistencia.models import Beca
@@ -24,11 +31,14 @@ from ControlAsistencia.models import PlanAsistencia
 from ControlAsistencia.models import Documento
 from ControlAsistencia.models import Curso
 
+
 class EstudianteEnLinea(admin.TabularInline):
     model = Estudiante
 
+
 class PlanAsistenciaEnLinea(admin.TabularInline):
     model = PlanAsistencia
+
 
 class DocumentoEnLinea(admin.TabularInline):
     model = Documento
@@ -50,6 +60,7 @@ admin.site.register(Estudiante, EstudianteAdmin)
 admin.site.register(Tutor, TutorAdmin)
 admin.site.register(Pago)
 admin.site.register(Asistencia)
+admin.site.register(TipoMenu)
 admin.site.register(Menu)
 admin.site.register(Centro)
 admin.site.register(Direccion)
@@ -68,3 +79,8 @@ admin.site.register(Etapa)
 admin.site.register(ComunidadAutonoma)
 admin.site.register(PlanAsistencia)
 admin.site.register(Curso)
+
+admin.site.add_action(export_as_csv_action)
+admin.site.add_action(export_as_json_action)
+admin.site.add_action(export_as_xml_action)
+admin.site.add_action(export_as_yaml_action)
