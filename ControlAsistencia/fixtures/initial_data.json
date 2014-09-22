@@ -389,21 +389,6 @@
     "pk": 2
   },
   {
-    "fields": {
-      "bic": "56",
-      "codigo": "MSC",
-      "codigoOficina": "001",
-      "dc1": "12",
-      "dc2": "34",
-      "fp": "78",
-      "iban": "MSC",
-      "nombre": "Mercantil Santa Cruz",
-      "telefono": 4
-    },
-    "model": "ControlAsistencia.banco",
-    "pk": 1
-  },
-  {
     "pk": 1,
     "model": "ControlAsistencia.etapa",
     "fields": {

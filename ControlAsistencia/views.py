@@ -7,5 +7,10 @@ import django_tables2 as tables
 
 
 def index(request):
-    estudiantes = Estudiante.objects.all()
-    return render(request, 'Estudiante.html', {'estudiantes': Estudiante.objects.all()})
+  return render(request, 'Opciones.html')
+
+def diario(request):
+  return render(request, 'Estudiante.html', {'estudiantes': Estudiante.objects.all()})
+
+def mes(request):
+  return render(request, 'Estudiante.html', {'estudiantes': Estudiante.objects.all()})
