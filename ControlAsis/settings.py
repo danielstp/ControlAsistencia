@@ -118,8 +118,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'filer',
     'easy_thumbnails',
-    'event_rsvp',
-    'calendarium',
     'ControlAsistencia',
     'cms',
     'mptt',
@@ -141,6 +139,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'ajax_select',
     'django_tables2',
+    'admin_exporter',
+    'gencal',
 )
 
 # define the lookup channels in use on the site

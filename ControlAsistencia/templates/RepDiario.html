@@ -1,0 +1,17 @@
+{% load render_table from django_tables2 %}
+{% load static calDsTp %}
+<link rel="stylesheet" href="{% static "django_tables2/themes/paleblue/css/screen.css" %}">
+
+<h1>Registro de asistencia</h1>
+
+{% if error_message %} <p><strong> {{error_message}}</strong></p>{% endif %}
+
+
+
+<select name="centros" id="select_centros">
+    {% for c in centros %}
+    <option value="{{ c.nombre }}"{% ifequal c.nombre centro %} selected="selected"{% endifequal %}>{{ c.nombre }}</option>
+    {% endfor %}
+</select>
+{% render_table estudiantes %}
+{% reading_calendar 2014 1 lista %}
