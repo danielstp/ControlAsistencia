@@ -10,7 +10,7 @@
 
 <select name="centros" id="select_centros">
     {% for c in centros %}
-    <option value="{{ c.id }}"{% ifequal c.val centro %} selected="selected"{% endifequal %}>{{ c.nombre }}</option>
+    <option value="{{ c.name }}"{% ifequal c.val centro %} selected="selected"{% endifequal %}>{{ c.nombre }}</option>
     {% endfor %}
 </select>
 {% render_table estudiantes %}
