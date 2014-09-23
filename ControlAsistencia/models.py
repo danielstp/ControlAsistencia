@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from django.db import models
+from django.db                import models
 from django.utils.translation import ugettext_lazy as _
-from django.core.validators import RegexValidator
-from django_countries.fields import CountryField
+from django.core.validators   import RegexValidator
+from django_countries.fields  import CountryField
 
 
 class Provincia(models.Model):
@@ -10,6 +10,8 @@ class Provincia(models.Model):
 
     def __unicode__(self):
         return self.nombre
+
+
 class ComunidadAutonoma(models.Model):
     nombre = models.CharField(_(u'Comunidad Autonoma'), max_length=250)
 
@@ -55,15 +57,15 @@ class Telefono(models.Model):
 
 
 class Persona(models.Model):
-    nombre = models.CharField(_(u'nombre'), max_length=250, blank=True)
-    apellido = models.CharField(_(u'1er Apellido'), max_length=250, blank=True)
+    nombre    = models.CharField(_(u'nombre'), max_length=250, blank=True)
+    apellido  = models.CharField(_(u'1er Apellido'), max_length=250, blank=True)
     apellido2 = models.CharField(_(u'2do Apellido '), max_length=250, blank=True)
     direccion = models.ForeignKey(Direccion)
-    dni = models.CharField(_(u'DNI'), help_text=_(u'documento nacional de identidad'), max_length=255)
-    email = models.EmailField(max_length=255)
-    telefono = models.ForeignKey(Telefono)
-    sexo = models.CharField(_(u'Sexo'), max_length=10, blank=True,
-                            choices=[(u'Masculino', _(u'Masculino')), (u'Femenino', _(u'Femenino'))])
+    dni       = models.CharField(_(u'DNI'), help_text=_(u'documento nacional de identidad'), max_length=255)
+    email     = models.EmailField(max_length=255)
+    telefono  = models.ForeignKey(Telefono)
+    sexo      = models.CharField(_(u'Sexo'), max_length=10, blank=True,
+                    choices=[(u'Masculino', _(u'Masculino')), (u'Femenino', _(u'Femenino'))])
     nacionalidad = CountryField()
     foto=models.ImageField(_(u'Fotografia'),upload_to=u'fotos', blank=True)
 
@@ -125,9 +127,6 @@ class CuentaBanco(models.Model):
         return self.numero
 
 
-
-
-
 class Beca(models.Model):
     nombre = models.CharField(max_length=255)
     monto = models.DecimalField(max_digits=12, decimal_places=2)
@@ -137,21 +136,21 @@ class Beca(models.Model):
 
 
 class Centro(models.Model):
-    nombre = models.CharField(max_length=255)
-    direccion = models.ForeignKey(Direccion)
-    codigo = models.CharField(_(u'Código'), max_length=255)
-    lote = models.CharField(max_length=255)
-    expediente = models.CharField(max_length=255)
-    director = models.ForeignKey(Contacto, related_name="Director", help_text="director de centro")
-    responsable = models.ForeignKey(Contacto,related_name="Responsable", help_text="responsable de comedor")
-    email = models.EmailField(_(u'Correo Electrónico'), max_length=255)
-    encargado = models.ForeignKey(Contacto,related_name='Encargado', help_text="encargado del comedor")
-    fax = models.CharField(max_length=255)
-    precioComida = models.DecimalField(max_digits=12, decimal_places=2)
+    nombre         = models.CharField(max_length=255)
+    direccion      = models.ForeignKey(Direccion)
+    codigo         = models.CharField(_(u'Código'), max_length=255)
+    lote           = models.CharField(max_length=255)
+    expediente     = models.CharField(max_length=255)
+    director       = models.ForeignKey(Contacto, related_name="Director", help_text="director de centro")
+    responsable    = models.ForeignKey(Contacto,related_name="Responsable", help_text="responsable de comedor")
+    email          = models.EmailField(_(u'Correo Electrónico'), max_length=255)
+    encargado      = models.ForeignKey(Contacto,related_name='Encargado', help_text="encargado del comedor")
+    fax            = models.CharField(max_length=255)
+    precioComida   = models.DecimalField(max_digits=12, decimal_places=2)
     precioDesayuno = models.DecimalField(max_digits=12, decimal_places=2)
-    beca = models.ManyToManyField(Beca, blank=True, null=True)
-    montoBeca = models.DecimalField(max_digits=12, decimal_places=2)
-    telefono = models.ForeignKey(Telefono)
+    beca           = models.ManyToManyField(Beca, blank=True, null=True)
+    montoBeca      = models.DecimalField(max_digits=12, decimal_places=2)
+    telefono       = models.ForeignKey(Telefono)
 
     def __unicode__(self):
         return self.nombre
@@ -159,7 +158,7 @@ class Centro(models.Model):
 
 class Tutor(models.Model):
     persona = models.OneToOneField(Persona)
-    cuenta = models.ForeignKey(CuentaBanco)
+    cuenta  = models.ForeignKey(CuentaBanco)
     class Meta:
         verbose_name = _(u'Tutor')
         verbose_name_plural = _(u'Tutores')
@@ -191,13 +190,13 @@ class Curso(models.Model):
 
 
 class Estudiante(models.Model):
-    persona= models.ForeignKey(Persona)
-    curso = models.ForeignKey(Curso)
-    dieta = models.CharField(max_length=255, blank=True)
-    nutricion = models.CharField(max_length=255, blank=True)
-    tutor = models.ForeignKey(Tutor)
-    pagador = models.ForeignKey(Pagador, related_name='pagador')
-    centro = models.ForeignKey(Centro)
+    persona    = models.ForeignKey(Persona)
+    curso      = models.ForeignKey(Curso)
+    dieta      = models.CharField(max_length=255, blank=True)
+    nutricion  = models.CharField(max_length=255, blank=True)
+    tutor      = models.ForeignKey(Tutor)
+    pagador    = models.ForeignKey(Pagador, related_name='pagador')
+    centro     = models.ForeignKey(Centro)
     nacimiento = models.DateField(u'Fecha de nacimiento')
 
     def __unicode__(self):
