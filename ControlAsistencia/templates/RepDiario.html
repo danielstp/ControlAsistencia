@@ -1,17 +1,29 @@
+<link rel="stylesheet" type="text/css" href="/static/djangocms_admin_style/css/djangocms-admin.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/base.css" />
 {% load render_table from django_tables2 %}
 {% load static calDsTp %}
 <link rel="stylesheet" href="{% static "django_tables2/themes/paleblue/css/screen.css" %}">
-
+<div id="header">
+<div id="branding">
 <h1>Registro de asistencia</h1>
+</div>
+</div>
 
 {% if error_message %} <p><strong> {{error_message}}</strong></p>{% endif %}
 
 
 
-<select name="centros" id="select_centros">
-    {% for c in centros %}
-    <option value="{{ c.nombre }}"{% ifequal c.nombre centro %} selected="selected"{% endifequal %}>{{ c.nombre }}</option>
-    {% endfor %}
-</select>
+<div class="actions">
+    <label>Curso: </label>
+    <select name="centros" id="select_centros">
+        <option selected="selected" value="">-----------------------</option>
+        {% for c in centros %}
+        <option value="{{ c.nombre }}"{% ifequal c.nombre centro %} {% endifequal %}>{{ c.nombre }}</option>
+        {% endfor %}
+    </select>
+    <button class="button" value="0" name="index" title="Ejecutar la acción seleccionada" type="submit">Ir</button>
+
+</div>
+
 {% render_table estudiantes %}
 {% reading_calendar 2014 1 lista %}
