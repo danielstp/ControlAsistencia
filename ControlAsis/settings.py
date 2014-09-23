@@ -118,8 +118,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'filer',
     'easy_thumbnails',
-    'event_rsvp',
-    'calendarium',
     'ControlAsistencia',
     'cms',
     'mptt',
