@@ -10,7 +10,7 @@ def index(request):
   return render(request, 'Opciones.html')
 
 def diario(request):
-  return render(request, 'RepDiario.html', {'estudiantes': Estudiante.objects.all()}, {'centros': Centro.objects.all()})
+  return render(request, 'RepDiario.html', {'estudiantes': Estudiante.objects.all(), 'centros': Centro.objects.all()})
 
 def mes(request):
   return render(request, 'RepMensual.html', {'estudiantes': Estudiante.objects.all()})

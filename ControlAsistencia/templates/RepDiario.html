@@ -6,10 +6,12 @@
 
 {% if error_message %} <p><strong> {{error_message}}</strong></p>{% endif %}
 
-{% render_table estudiantes %}
+
+
 <select name="centros" id="select_centros">
     {% for c in centros %}
-    <option value="{{ c.val }}"{% ifequal c.val centro %} selected="selected"{% endifequal %}>{{ c.nombre }}</option>
+    <option value="{{ c.id }}"{% ifequal c.val centro %} selected="selected"{% endifequal %}>{{ c.nombre }}</option>
     {% endfor %}
 </select>
+{% render_table estudiantes %}
 {% gencal queryset %}
