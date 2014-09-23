@@ -212,5 +212,5 @@ CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
     'default':
-        {'ENGINE': 'django.db.backends.mysql', 'NAME': 'wilson_serv', 'HOST': 'localhost', 'USER': 'wilson', 'PASSWORD': '.wilson.', 'PORT': ''}
+        {'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'project.db', 'HOST': 'localhost', 'USER': '', 'PASSWORD': '', 'PORT': ''}
 }
