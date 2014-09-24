@@ -12,18 +12,18 @@
 {% if error_message %} <p><strong> {{error_message}}</strong></p>{% endif %}
 
 
-
+<form action="/control/diario" method="get">{% csrf_token %}
 <div class="actions">
     <label>Curso: </label>
     <select name="centros" id="select_centros">
         <option selected="selected" value="">-----------------------</option>
         {% for c in centros %}
-        <option value="{{ c.nombre }}"{% ifequal c.nombre centro %} {% endifequal %}>{{ c.nombre }}</option>
+        <option value="{{ c.id }}"{% ifequal c.nombre centro %} {% endifequal %}>{{ c.nombre }}</option>
         {% endfor %}
     </select>
     <button class="button" value="0" name="index" title="Ejecutar la acción seleccionada" type="submit">Ir</button>
 
 </div>
-
+</form>
 {% render_table estudiantes %}
 {% reading_calendar 2014 1 lista %}
