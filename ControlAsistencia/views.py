@@ -14,19 +14,20 @@ def index(request):
   return render(request, 'Opciones.html')
 
 def diario(request):
+  lista=[]
   if request.GET.get('centros'):
+    #return HttpResponse(request.GET.get('centros'))
     estudiantes= Estudiante.objects.filter(centro=request.GET.get('centros'))
   else:
     estudiantes= Estudiante.objects.all()
 
   return render(request, 'RepDiario.html',
-                    {'estudiantes': Estudiante.objects.all(),
+                    {'estudiantes': estudiantes,
                      'centros': Centro.objects.all(),
-                     'centro':request.GET.get('centros')})
+                     'centro':request.GET.get('centros'),
+                     'lista':lista})
 
-def diario1(request, centro):
-  cen=centro
-  return HttpResponse("You're looking at the results of poll %s." % cen)
+
 
 
 def mes(request):
