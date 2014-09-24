@@ -191,8 +191,9 @@ class Curso(models.Model):
 class Estudiante(models.Model):
     persona    = models.ForeignKey(Persona)
     curso      = models.ForeignKey(Curso)
-    dieta      = models.CharField(max_length=255, blank=True)
-    nutricion  = models.CharField(max_length=255, blank=True)
+    dieta      = models.CharField(max_length=12,
+                            choices=[(u'Basal', _(u'Basal')), (u'Especial', _(u'Especial'))])
+    nutricion  = models.TextField(max_length=255, blank=True)
     tutor      = models.ForeignKey(Tutor)
     centro     = models.ForeignKey(Centro)
     pagador    = models.ForeignKey(Pagador, related_name=u'pagador')
