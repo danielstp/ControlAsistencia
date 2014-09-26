@@ -1,0 +1,47 @@
+
+<link rel="stylesheet" type="text/css" href="/static/djangocms_admin_style/css/djangocms-admin.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/base.css" />
+{% load render_table from django_tables2 %}
+{% load static calDsTp %}
+<link rel="stylesheet" href="{% static "django_tables2/themes/paleblue/css/screen.css" %}">
+<div id="header">
+<div id="branding">
+<h1>Registro de Asistencia de hoy : {{hoy}} {{diaSem}}</h1>
+</div>
+</div>
+
+{% if error_message %} <p><strong> {{error_message}}</strong></p>{% endif %}
+
+
+<form action="/control/asistencia" method="get">{% csrf_token %}
+<div class="actions">
+    <label>Curso: </label>
+    <select name="centros" id="select_centros">
+        <option selected="selected" value="">-----------------------</option>
+        {% for c in centros %}
+        <option value="{{ c.id }}"{% ifequal c.nombre centro %} {% endifequal %}>{{ c.nombre }}</option>
+        {% endfor %}
+    </select>
+    <button class="button" value="0" name="index" title="Ejecutar la acción seleccionada" type="submit">Ir</button>
+</div>
+</form>
+<div class="listAsist">
+<form action="/control/registro" method="get">{% csrf_token %}
+    <table class="listClass">
+    <tr>
+        <th>Estudiante</th>
+        <th>Asistencia</th>
+    </tr>
+    {% for e in estudiantes%}
+
+       <tr>
+        <td>{{e.persona }}</td><td><input type="checkbox" name="asistio" value="{{ e.id }}"/></td>
+        </tr>
+     {% endfor %}
+    </table>
+<button class="button" value="0" name="index" title="Ejecutar la acción seleccionada" type="submit">Registrar</button>
+</form>
+</div>
+</form>
+
+

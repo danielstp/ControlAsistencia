@@ -226,7 +226,7 @@ class Pago(models.Model):
 
 class Asistencia(models.Model):
     asistente = models.ForeignKey(Estudiante)
-    fechaHora = models.DateTimeField(u'Fecha y hora de la asistencia')
+    fecha = models.DateField(u'Fecha de la asistencia')
     menu = models.ForeignKey(Menu)
 
     class Meta:
