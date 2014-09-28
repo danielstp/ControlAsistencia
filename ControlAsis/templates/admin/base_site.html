@@ -1,14 +1,19 @@
-<link rel="stylesheet" type="text/css" href="/static/djangocms_admin_style/css/djangocms-admin.css" />
-<link rel="stylesheet" type="text/css" href="/static/css/base.css" />
-<link rel="stylesheet" type="text/css" href="/static/css/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="static/djangocms_admin_style/css/djangocms-admin.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/baseP.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/bootstrap/css/bootstrap.min.css" />
+<script src="/static/admin/css/bootstrap/js/jquery-1.11.1.min.js"></script>
+<script src="/static/admin/css/bootstrap/js/bootstrap.min.js"></script>
 
-{% load static gencal %}
-<link rel="stylesheet" href="{% static "django_tables2/themes/paleblue/css/screen.css" %}">
-<header>
-    <div id="branding">
 
-    </div>
+{% extends "admin/base.html" %}
 
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'Django site admin' %}{% endblock %}
+
+
+
+{% block nav-global %}
 <nav class="navbar navbar-default" role="navigation">
   <!-- El logotipo y el icono que despliega el menú se agrupan
        para mostrarlos mejor en los dispositivos móviles -->
@@ -22,19 +27,13 @@
     </button>
     <a class="navbar-brand" href="#"><img src="/static/img/xestiona.png"></a>
     <a class="navbar-brand" href="#"><img src="/static/img/logo-2.png"></a>
-      <div id="user-tools">
-Bienvenido/a,
-<strong>jorge</strong>
-.
-<a href="/es-es/admin/password_change/">Cambiar contraseña</a>
-/
-<a href="/es-es/admin/logout/">Terminar sesión</a>
-</div>
     <span id="vinHeader">Comedores Populares Concello de Ferrol</span>
 
   </div>
 </nav>
-</header>
+
+
+
   <!-- Agrupar los enlaces de navegación, los formularios y cualquier
        otro elemento que se pueda ocultar al minimizar la barra -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -56,22 +55,22 @@ Bienvenido/a,
 
   </div>
 
-
-
-{% if error_message %} <p><strong> {{error_message}}</strong></p>{% endif %}
-
-{% gencal queryset %}
-<nav class="navbar navbar-default" role="navigation">
-<ul>
-<li>
-<a href='/control/diario/'>diario</a></li>
-<li>
-<a href='/control/mes'>mensual</a></li>
-<li>
-<a href='/control/asistencia'>Asistencias</a></li>
-</ul>
+    {% if user.is_active and user.is_staff %}
+        <div id="user-tools">
+            {% trans 'Welcome,' %}
+            <strong>{% firstof user.get_short_name user.get_username %}</strong>.
+            {% block userlinks %}
+                {% url 'django-admindocs-docroot' as docsroot %}
+                {% if docsroot %}
+                    <a href="{{ docsroot }}">{% trans 'Documentation' %}</a> /
+                {% endif %}
+                {% if user.has_usable_password %}
+                <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
+                {% endif %}
+                <a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
+            {% endblock %}
+        </div>
+        {% endif %}
 </nav>
 
-  {% block content %}
-{{ content }}
- {% endblock %}
+{% endblock %}

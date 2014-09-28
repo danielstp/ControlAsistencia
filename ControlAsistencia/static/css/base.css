@@ -20,6 +20,47 @@
     padding: 0 3px 10px;
 }
 
+.navbar-header
+{
+    background-color: #CFF8F9;
+    height: 100px;
+}
+.navbar-header img{
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 60px;
+}
+
+.nolefty{
+    float: right;
+    padding-right: 10px;
+    padding-top: 10px;
+    }
+.nolefty1{
+    float: right;
+    padding-right: 10px;
+    padding-top: 20px;
+    font-weight: bold;
+    }
+
+.nolefty a{
+    color: #111111;
+}
+
+.navbar{
+    margin-bottom: 0px !important;
+}
+.navbar-nav > li > a {
+   color: #111111 !important;
+}
 #changelist {
     width: auto !important;
+}
+#vinHeader{
+
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    color: #111111;
+    float: right !important
 }

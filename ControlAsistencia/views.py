@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django import forms
 from datetime import datetime, date
 from ControlAsistencia.models import Estudiante, Centro, PlanAsistencia, Asistencia, Menu
+#import xlwt
 
 import ControlAsistencia.views
 
@@ -113,3 +114,4 @@ def RepAsist(request):
                      'lista':lista,
                      'hoy':hoy,
                      'diaSem':diaSem})
+

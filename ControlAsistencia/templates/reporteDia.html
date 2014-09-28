@@ -5,9 +5,9 @@
 {% load static calDsTp %}
 <link rel="stylesheet" href="{% static "django_tables2/themes/paleblue/css/screen.css" %}">
 <div id="header">
-<div id="branding">
-<h1>Reporte de Asistencia de hoy : {{hoy}} {{diaSem}}</h1>
-</div>
+    <div id="branding">
+        <h1>Reporte de Asistencia de hoy : {{hoy}} {{diaSem}}</h1>
+    </div>
 </div>
 
 {% if error_message %} <p><strong> {{error_message}}</strong></p>{% endif %}
