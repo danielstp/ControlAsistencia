@@ -135,7 +135,7 @@ class Beca(models.Model):
         return self.nombre + u' ' + str(self.monto) + u'€'
 
 
-class Centro(models.Model):
+class Colegio(models.Model):
     nombre         = models.CharField(max_length=255)
     direccion      = models.ForeignKey(Direccion)
     codigo         = models.CharField(_(u'Código'), max_length=255)
@@ -161,7 +161,7 @@ class Tutor(Persona):
         verbose_name_plural = _(u'Tutores')
 
     def __unicode__(self):
-        return self.persona.nombre + u' ' + self.persona.apellido
+        return self.nombre + u' ' + self.apellido
 
 class Pagador(Tutor):
     cuenta = models.ForeignKey(CuentaBanco)
@@ -169,7 +169,7 @@ class Pagador(Tutor):
     class Meta:
        verbose_name_plural = _(u'Pagadores')
     def __unicode__(self):
-        return self.persona.nombre + u' ' + self.persona.apellido + u' ' + self.persona.apellido2
+        return self.nombre + u' ' + self.apellido + u' ' + self.apellido2
 
 
 class Etapa(models.Model):
@@ -192,8 +192,8 @@ class Estudiante(EstudianteBase):
     dieta      = models.CharField(max_length=12,
                             choices=[(u'Basal', _(u'Basal')), (u'Especial', _(u'Especial'))])
     nutricion  = models.TextField(max_length=255, blank=True)
-    tutor      = models.ForeignKey(Tutor)
-    centro     = models.ForeignKey(Centro)
+    tutor      = models.ForeignKey(Tutor, related_name=u'tutor')
+    colegio     = models.ForeignKey(Colegio)
     pagador    = models.ForeignKey(Pagador, related_name=u'pagador')
     nacimiento = models.DateField(u'Fecha de nacimiento')
 
@@ -250,13 +250,13 @@ class Becado(models.Model):
         return self.beca.beca
 
 
-class BecaCentro(models.Model):
-    centro = models.ForeignKey(Centro)
+class BecaColegio(models.Model):
+    colegio = models.ForeignKey(Colegio)
     beca = models.ForeignKey(Beca)
     monto = models.DecimalField(max_digits=12, decimal_places=2)
 
     def __unicode__(self):
-        return self.beca.nombre + u' ' + self.centro.nombre
+        return self.beca.nombre + u' ' + self.colegio.nombre
 
 class PlanAsistencia(models.Model):
     estudiante  = models.ForeignKey(Estudiante)

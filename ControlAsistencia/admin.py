@@ -13,11 +13,11 @@ from ControlAsistencia.models import Pago
 from ControlAsistencia.models import Asistencia
 from ControlAsistencia.models import Menu
 from ControlAsistencia.models import TipoMenu
-from ControlAsistencia.models import Centro
+from ControlAsistencia.models import Colegio
 from ControlAsistencia.models import Direccion
 from ControlAsistencia.models import Beca
 from ControlAsistencia.models import Becado
-from ControlAsistencia.models import BecaCentro
+from ControlAsistencia.models import BecaColegio
 from ControlAsistencia.models import Provincia
 from ControlAsistencia.models import Contacto
 from ControlAsistencia.models import Persona
@@ -34,6 +34,8 @@ from ControlAsistencia.models import Curso
 
 class EstudianteEnLinea(admin.TabularInline):
     model = Estudiante
+    fk_name = 'tutor'
+    extra = 1
 
 
 class PlanAsistenciaEnLinea(admin.TabularInline):
@@ -62,11 +64,11 @@ admin.site.register(Pago)
 admin.site.register(Asistencia)
 admin.site.register(TipoMenu)
 admin.site.register(Menu)
-admin.site.register(Centro)
+admin.site.register(Colegio)
 admin.site.register(Direccion)
 admin.site.register(Beca)
 admin.site.register(Becado)
-admin.site.register(BecaCentro)
+admin.site.register(BecaColegio)
 admin.site.register(Provincia)
 admin.site.register(Persona)
 admin.site.register(Contacto)

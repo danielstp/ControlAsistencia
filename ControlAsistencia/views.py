@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django import forms
 from datetime import datetime, date
-from ControlAsistencia.models import Estudiante, Centro, PlanAsistencia, Asistencia, Menu
+from ControlAsistencia.models import Estudiante, Colegio, PlanAsistencia, Asistencia, Menu
 
 
 def index(request):
@@ -13,16 +13,16 @@ def index(request):
 
 def diario(request):
   lista=[]
-  if request.GET.get('centros'):
-    #return HttpResponse(request.GET.get('centros'))
-    estudiantes= Estudiante.objects.filter(centro=request.GET.get('centros'))
+  if request.GET.get('Colegios'):
+    #return HttpResponse(request.GET.get('Colegios'))
+    estudiantes= Estudiante.objects.filter(Colegio=request.GET.get('Colegios'))
   else:
     estudiantes= Estudiante.objects.all()
 
   return render(request, 'RepDiario.html',
                     {'estudiantes': estudiantes,
-                     'centros': Centro.objects.all(),
-                     'centro':request.GET.get('centros'),
+                     'Colegios': Colegio.objects.all(),
+                     'Colegio':request.GET.get('Colegios'),
                      'lista':lista})
 
 
@@ -38,18 +38,18 @@ def listaAsist (request):
   hoy=datetime.today()
   diaSem=dicDays[hoy.strftime('%A').upper()]
   lista=[]
-  if request.GET.get('centros'):
-    #return HttpResponse(request.GET.get('centros'))
+  if request.GET.get('Colegios'):
+    #return HttpResponse(request.GET.get('Colegios'))
 
-    estudiantes= Estudiante.objects.filter(centro=request.GET.get('centros'))
+    estudiantes= Estudiante.objects.filter(Colegio=request.GET.get('Colegios'))
 
   else:
     estudiantes= Estudiante.objects.all()
 
   return render(request, 'asistenciaDia.html',
                     {'estudiantes': estudiantes,
-                     'centros': Centro.objects.all(),
-                     'centro':request.GET.get('centros'),
+                     'Colegios': Colegio.objects.all(),
+                     'Colegio':request.GET.get('Colegios'),
                      'lista':lista,
                      'hoy':hoy,
                      'diaSem':diaSem})
@@ -60,8 +60,8 @@ def RgAsist (request):
     hoy=datetime.today()
     diaSem=dicDays[hoy.strftime('%A').upper()]
     asistieron=request.GET.getlist('asistio')
-    if request.GET.get('centros'):
-            estudiantes= Estudiante.objects.filter(centro=request.GET.get('centros'))
+    if request.GET.get('Colegios'):
+            estudiantes= Estudiante.objects.filter(Colegio=request.GET.get('Colegios'))
 
     else:
             estudiantes= Estudiante.objects.all()
@@ -73,8 +73,8 @@ def RgAsist (request):
     asistencias= Asistencia.objects.filter(fecha=date.today())
     return render(request, 'registroDia.html',
                     {'estudiantes': estudiantes,
-                     'centros': Centro.objects.all(),
-                     'centro':request.GET.get('centros'),
+                     'Colegios': Colegio.objects.all(),
+                     'Colegio':request.GET.get('Colegios'),
                      'hoy':hoy,
                      'diaSem':diaSem,
                      'asistencias':asistencias })
@@ -88,10 +88,10 @@ def RepAsist(request):
     hoy=datetime.today()
     diaSem=dicDays[hoy.strftime('%A').upper()]
     lista=[]
-    if request.GET.get('centros'):
-    #return HttpResponse(request.GET.get('centros'))
+    if request.GET.get('Colegios'):
+    #return HttpResponse(request.GET.get('Colegios'))
 
-         estudiantes= Estudiante.objects.filter(centro=request.GET.get('centros'))
+         estudiantes= Estudiante.objects.filter(Colegio=request.GET.get('Colegios'))
          asistencias= Asistencia.objects.filter(fecha=date.today())
          #for est in estudiantes
 
@@ -103,8 +103,8 @@ def RepAsist(request):
 
     return render(request, 'RepDiario.html',
                     {'estudiantes': estudiantes,
-                     'centros': Centro.objects.all(),
-                     'centro':request.GET.get('centros'),
+                     'Colegios': Colegio.objects.all(),
+                     'Colegio':request.GET.get('Colegios'),
                      'lista':lista,
                      'hoy':hoy,
                      'diaSem':diaSem})
