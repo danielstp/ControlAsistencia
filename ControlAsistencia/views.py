@@ -6,12 +6,7 @@ from django.shortcuts import render
 from django import forms
 from datetime import datetime, date
 from ControlAsistencia.models import Estudiante, Centro, PlanAsistencia, Asistencia, Menu
-#import xlwt
 
-import ControlAsistencia.views
-
-
- #widget=forms.Select(choices=Centro.objects.all())
 
 def index(request):
   return render(request, 'Opciones.html')
@@ -20,7 +15,6 @@ def diario(request):
   lista=[]
   if request.GET.get('centros'):
     #return HttpResponse(request.GET.get('centros'))
-
     estudiantes= Estudiante.objects.filter(centro=request.GET.get('centros'))
   else:
     estudiantes= Estudiante.objects.all()

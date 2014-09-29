@@ -155,8 +155,7 @@ class Centro(models.Model):
         return self.nombre
 
 
-class Tutor(models.Model):
-    persona = models.OneToOneField(Persona)
+class Tutor(Persona):
     class Meta:
         verbose_name = _(u'Tutor')
         verbose_name_plural = _(u'Tutores')
@@ -188,8 +187,7 @@ class Curso(models.Model):
         return self.nombre + u' ' + str(self.nivel)
 
 
-class Estudiante(models.Model):
-    persona    = models.ForeignKey(Persona)
+class Estudiante(EstudianteBase):
     curso      = models.ForeignKey(Curso)
     dieta      = models.CharField(max_length=12,
                             choices=[(u'Basal', _(u'Basal')), (u'Especial', _(u'Especial'))])
@@ -200,7 +198,7 @@ class Estudiante(models.Model):
     nacimiento = models.DateField(u'Fecha de nacimiento')
 
     def __unicode__(self):
-        return self.persona.nombre + u' ' + self.persona.apellido
+        return self.nombre + u' ' + self.apellido
 
 class Documento(models.Model):
    nombre=models.CharField(_(u'nombre'), max_length=250)
