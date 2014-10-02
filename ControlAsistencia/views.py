@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django import forms
 from datetime import datetime, date
-from ControlAsistencia.models import Estudiante, Colegio, PlanAsistencia, Asistencia, Menu
+from ControlAsistencia.models import Estudiante, Colegio, PlanAsistencia, Asistencia, Menu, Curso
 
 
 def index(request):
@@ -109,3 +109,8 @@ def RepAsist(request):
                      'hoy':hoy,
                      'diaSem':diaSem})
 
+def tarea(request):
+
+  return render(request, 'TareasEst.html', {'estudiantes': Estudiante.objects.all(),
+                                            'Colegios': Colegio.objects.all(),
+                                            'Cursos': Curso.objects.all()})
