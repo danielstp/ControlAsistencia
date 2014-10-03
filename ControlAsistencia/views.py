@@ -109,6 +109,72 @@ def RepAsist(request):
                      'hoy':hoy,
                      'diaSem':diaSem})
 
+def FamiliarResponsable(request):
+   
+    return render(request, 'FamiliarResponsable.html',
+                    {'estudiantes': estudiantes,
+                    })
+
+def Pagadores(request):
+   
+    return render(request, 'Pagadores.html',
+                    {'estudiantes': estudiantes,
+                    })
+
+def AnadirPagador(request):
+   
+    return render(request, 'AnadirPagador.html',
+                    {'estudiantes': estudiantes,
+                    })
+
+def ServiciosContratados(request):
+   
+   return render(request, 'ServiciosContratados.html',
+                  {'estudiantes': estudiantes,
+                   'Colegios': Colegio.objects.all(),
+                   'Colegio':request.GET.get('Colegios'),
+                  })
+
+def BecaAlumno(request):
+   
+  return render(request, 'BecaAlumno.html',
+                 {'estudiantes': estudiantes,
+                 })
+
+def ModifAsistenciasProg(request):
+   
+  return render(request, 'ModifAsistenciasProg.html',
+                 {'estudiantes': estudiantes,
+                  'Colegios': Colegio.objects.all(),
+                  'Colegio':request.GET.get('Colegios'),
+                 })
+
+def ControlDeAsistencia(request):
+  hoy=datetime.today()
+  return render(request, 'ControlDeAsistencia.html',
+                 {'estudiantes': estudiantes,
+                  'Colegios': Colegio.objects.all(),
+                  'Colegio':request.GET.get('Colegios'),
+                  'hoy':hoy,
+                  'menu': menu,
+                 })
+
+def InformeAsistencia(request):
+   
+  return render(request, 'InformeAsistencia.html',
+                 {'estudiantes': estudiantes,
+                  'Colegios': Colegio.objects.all(),
+                  'Colegio':request.GET.get('Colegios'),
+                  'curso': curso,
+                 })
+
+def Becas(request):
+   
+  return render(request, 'Becas.html',
+                 {'becas': becas,
+                  'menu': menu,
+                 })
+
 def tarea(request):
 
   return render(request, 'TareasEst.html', {'estudiantes': Estudiante.objects.all(),
