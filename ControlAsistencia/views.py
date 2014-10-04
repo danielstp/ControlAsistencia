@@ -109,8 +109,12 @@ def RepAsist(request):
                      'hoy':hoy,
                      'diaSem':diaSem})
 
-def tarea(request):
+def Reporte(request):
+  if request.GET.get('Colegios'):
+            estudiantes= Estudiante.objects.filter(Colegio=request.GET.get('Colegios'))
 
-  return render(request, 'TareasEst.html', {'estudiantes': Estudiante.objects.all(),
+  else:
+            estudiantes= Estudiante.objects.all()
+  return render(request, 'TareasEst.html', {'estudiantes': estudiantes,
                                             'Colegios': Colegio.objects.all(),
                                             'Cursos': Curso.objects.all()})

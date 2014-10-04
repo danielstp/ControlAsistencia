@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap/css/bootstrap.min.css" />
 <script src="/static/css/bootstrap/js/jquery-1.11.1.min.js"></script>
 <script src="/static/css/bootstrap/js/bootstrap.min.js"></script>
-
+{% load render_table from django_tables2 %}
 {% load static gencal %}
 <link rel="stylesheet" href="{% static "django_tables2/themes/paleblue/css/screen.css" %}">
  <script type="text/javascript">
@@ -52,7 +52,7 @@ Bienvenido/a,
       <li><a href="/admin/ControlAsistencia/tutor/">Tutores</a></li>
       <li><a href="/admin/ControlAsistencia/pagador/">Pagadores</a></li>
       <li><a href="/control/asistencia">Asistencia</a></li>
-      <li><a href="/admin/ControlAsistencia/asistencia/">Reportes</a></li>
+      <li><a href="/control/reporte/">Reportes</a></li>
 
     </ul>
 
@@ -68,8 +68,9 @@ Bienvenido/a,
 
 
 <div class="col-md-12">
+<form action="/control/reporte" method="get" class="">{% csrf_token %}
     <div class="col-md-3">
-        <form action="/control/asistencia" method="get" class="">{% csrf_token %}
+
 
             <label class="">Colegio: </label>
             <select name="colegio" id=colegio"  placeholder="Seleccionar" class="">
@@ -78,12 +79,9 @@ Bienvenido/a,
                 <option value="{{ c.id }}"{% ifequal c.nombre colegio %} {% endifequal %}>{{ c.nombre }}</option>
                 {% endfor %}
             </select>
-            <button class="" value="0" name="index" title="Ejecutar la acción seleccionada" type="submit">Ir</button>
-
-        </form>
     </div>
     <div class="col-md-3">
-        <form action="/control/asistencia" method="get" class="">{% csrf_token %}
+
 
             <label class="">Curso: </label>
             <select name="cursos" id=cursos"  placeholder="Seleccionar" class="form-control2">
@@ -92,36 +90,34 @@ Bienvenido/a,
                 <option value="{{ c.id }}"{% ifequal c.nombre curso %} {% endifequal %}>{{ c.nombre }}</option>
                 {% endfor %}
             </select>
-            <button class="" value="0" name="index" title="Ejecutar la acción seleccionada" type="submit">Ir</button>
 
-        </form>
     </div>
     <div class="col-md-3">
-        <form action="/control/asistencia" method="get" class="">{% csrf_token %}
+
 
             <label class="">Dieta: </label>
-            <select name="colegio" id=colegio"  placeholder="Seleccionar" class="">
+            <select name="dieta" id=dieta"  placeholder="Seleccionar" class="">
                 <option selected="selected" value=""></option>
                 <option value="Basal">Basal</option>
                 <option value="Especial">Especial</option>
 
             </select>
-            <button class="" value="0" name="index" title="Ejecutar la acción seleccionada" type="submit">Ir</button>
 
-        </form>
     </div>
     <div class="col-md-3">
-         <form  role="search" class="">
+
 
           <label class="">Apellido: </label>
-        <input type="text" class="form-control1" placeholder="Buscar">
+           <input type="text" class="form-control1" placeholder="Buscar">
          <button type="submit" class="">Ir</button>
 
 
-    </form>
-    </div>
 
+    </div>
+    </form>
 </div>
+{% render_table estudiantes %}
+
 
 
 
