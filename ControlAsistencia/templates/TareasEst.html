@@ -72,7 +72,7 @@ Bienvenido/a,
     <div class="col-md-3">
 
 
-            <label class="">Colegio: </label>
+            <label class="">Coleg: </label>
             <select name="colegio" id=colegio"  placeholder="Seleccionar" class="">
                 <option selected="selected" value=""></option>
                 {% for c in Colegios %}
@@ -84,7 +84,7 @@ Bienvenido/a,
 
 
             <label class="">Curso: </label>
-            <select name="cursos" id=cursos"  placeholder="Seleccionar" class="form-control2">
+            <select name="curso" id=curso"  placeholder="Seleccionar" class="form-control2">
                 <option selected="selected" value=""></option>
                 {% for c in Cursos %}
                 <option value="{{ c.id }}"{% ifequal c.nombre curso %} {% endifequal %}>{{ c.nombre }}</option>
@@ -108,7 +108,7 @@ Bienvenido/a,
 
 
           <label class="">Apellido: </label>
-           <input type="text" class="form-control1" placeholder="Buscar">
+           <input type="text" id="apellido" class="form-control1" placeholder="Buscar">
          <button type="submit" class="">Ir</button>
 
 
