@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "ControlAsistencia.direccion", "fields": {"piso": "1", "casa": "", "comunidad": 1, "calle1": "", "calle2": "", "ciudad": "", "numero": "", "edificio": "Central", "departamento": "", "pais": "AO", "codigoPostal": "", "provincia": 6}}]

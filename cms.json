@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "cms.usersettings", "fields": {"clipboard": 1, "user": 1, "language": "es-es"}}, {"pk": 1, "model": "cms.placeholder", "fields": {"slot": "clipboard", "default_width": null}}]

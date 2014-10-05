@@ -109,12 +109,96 @@ def RepAsist(request):
                      'hoy':hoy,
                      'diaSem':diaSem})
 
+
 def Reporte(request):
   if request.GET.get('Colegios'):
             estudiantes= Estudiante.objects.filter(Colegio=request.GET.get('Colegios'))
+"""
+def FamiliarResponsable(request):
+   
+    return render(request, 'FamiliarResponsable.html',
+                    {'estudiantes': estudiantes,
+                    })
+
+def Pagadores(request):
+   
+    return render(request, 'Pagadores.html',
+                    {'estudiantes': estudiantes,
+                    })
+
+def AnadirPagador(request):
+   
+    return render(request, 'AnadirPagador.html',
+                    {'estudiantes': estudiantes,
+                    })
+
+def ServiciosContratados(request):
+   
+   return render(request, 'ServiciosContratados.html',
+                  {'estudiantes': estudiantes,
+                   'Colegios': Colegio.objects.all(),
+                   'Colegio':request.GET.get('Colegios'),
+                  })
+
+def BecaAlumno(request):
+   
+  return render(request, 'BecaAlumno.html',
+                 {'estudiantes': estudiantes,
+                 })
+
+def ModifAsistenciasProg(request):
+   
+  return render(request, 'ModifAsistenciasProg.html',
+                 {'estudiantes': estudiantes,
+                  'Colegios': Colegio.objects.all(),
+                  'Colegio':request.GET.get('Colegios'),
+                 })
+
+def ControlDeAsistencia(request):
+  hoy=datetime.today()
+  return render(request, 'ControlDeAsistencia.html',
+                 {'estudiantes': estudiantes,
+                  'Colegios': Colegio.objects.all(),
+                  'Colegio':request.GET.get('Colegios'),
+                  'hoy':hoy,
+                  'menu': menu,
+                 })
+
+def InformeAsistencia(request):
+   
+  return render(request, 'InformeAsistencia.html',
+                 {'estudiantes': estudiantes,
+                  'Colegios': Colegio.objects.all(),
+                  'Colegio':request.GET.get('Colegios'),
+                  'curso': curso,
+                 })
+
+def Becas(request):
+   
+  return render(request, 'Becas.html',
+                 {'becas': becas,
+                  'menu': menu,
+                 })
+"""
+def Reporte(request):
+
+  if request.GET.get('colegio'):
+            #estudiantes= Estudiante.objects.filter(Colegio=request.GET.get('colegio'))
+            col =request.GET['colegio']
+            #curs =request.GET['curso']
+            diet =request.GET['dieta']
+            #apell =request.GET['apellido']
+
+            estudiantes= Estudiante.objects.filter(colegio=Colegio.objects.get(pk=col))#.filter(curso=Curso.objects.get(pk=curs))
+
 
   else:
             estudiantes= Estudiante.objects.all()
+
+
+
+
   return render(request, 'TareasEst.html', {'estudiantes': estudiantes,
                                             'Colegios': Colegio.objects.all(),
-                                            'Cursos': Curso.objects.all()})
+                                            'Cursos': Curso.objects.all(),
+                                            'colegio':Colegio})

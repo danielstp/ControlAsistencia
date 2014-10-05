@@ -44,6 +44,7 @@ class PlanAsistenciaEnLinea(admin.TabularInline):
 
 class DocumentoEnLinea(admin.TabularInline):
     model = Documento
+    extra = 1
 
 
 class TutorAdmin(admin.ModelAdmin):
